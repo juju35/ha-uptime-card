@@ -125,6 +125,26 @@ test("a group title folds and unfolds its group, a click elsewhere folds it back
   card.disconnectedCallback();
 });
 
+test("no rewrite under a press: the pending update is drawn on release, a click renders at once", async () => {
+  const card = newCard({ group_by: "source" });
+  card.connectedCallback();
+  click(card, { action: "toggle_group", group: "Ping", problem: "0" });
+  const folded = html(card);
+  card.shadowRoot.listeners.pointerdown({});
+  card._outside.tap({ composedPath: () => [] });
+  assert.equal(html(card), folded, "no rewrite under the pointer");
+  card._onPressEnd();
+  await flush();
+  assert.notEqual(html(card), folded, "drawn once released");
+  // A click during a press renders at once.
+  card.shadowRoot.listeners.pointerdown({});
+  const before = html(card);
+  click(card, { action: "toggle_group", group: "Ping", problem: "0" });
+  assert.notEqual(html(card), before);
+  assert.equal(card._pressing, false);
+  card.disconnectedCallback();
+});
+
 test("folding: a tap elsewhere (pointer), not a press in the card released outside; leaving the page folds back", () => {
   const card = newCard({ group_by: "source" });
   card.connectedCallback();
