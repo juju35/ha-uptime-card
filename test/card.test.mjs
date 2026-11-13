@@ -125,6 +125,44 @@ test("a group title folds and unfolds its group, a click elsewhere folds it back
   card.disconnectedCallback();
 });
 
+test("no rewrite under a press: the pending update is drawn on release, a click renders at once", async () => {
+  const card = newCard({ group_by: "source" });
+  card.connectedCallback();
+  click(card, { action: "toggle_group", group: "Ping", problem: "0" });
+  const folded = html(card);
+  card.shadowRoot.listeners.pointerdown({});
+  card._outside.tap({ composedPath: () => [] });
+  assert.equal(html(card), folded, "no rewrite under the pointer");
+  card._onPressEnd();
+  await flush();
+  assert.notEqual(html(card), folded, "drawn once released");
+  // A click during a press renders at once.
+  card.shadowRoot.listeners.pointerdown({});
+  const before = html(card);
+  click(card, { action: "toggle_group", group: "Ping", problem: "0" });
+  assert.notEqual(html(card), before);
+  assert.equal(card._pressing, false);
+  card.disconnectedCallback();
+});
+
+test("folding: a tap elsewhere (pointer), not a press in the card released outside; leaving the page folds back", () => {
+  const card = newCard({ group_by: "source" });
+  card.connectedCallback();
+  click(card, { action: "toggle_group", group: "Ping", problem: "0" });
+  // A slider pressed in the card and released outside of it: nothing folds back.
+  card._outside.tap({ composedPath: () => [card] });
+  assert.match(html(card), /data-group="Ping" data-problem="0" aria-expanded="false"/);
+  // A tap on a spot that sends no click (iOS): the pointer alone folds it back.
+  card._outside.tap({ composedPath: () => [] });
+  assert.match(html(card), /data-group="Ping" data-problem="0" aria-expanded="true"/);
+  // Left with the group folded and back: in its default state.
+  click(card, { action: "toggle_group", group: "Ping", problem: "0" });
+  card.disconnectedCallback();
+  card.connectedCallback();
+  assert.match(html(card), /data-group="Ping" data-problem="0" aria-expanded="true"/);
+  card.disconnectedCallback();
+});
+
 test("filters: only_problems, tags, sources, exclude and sort by name", () => {
   assert.deepEqual(rows(newCard({ only_problems: true, group_by: "none" })), ["sensor.media_status", "sensor.photos_status", "sensor.cloud_status"]);
   assert.deepEqual(rows(newCard({ tags: ["Media"] })).sort(), ["sensor.media_status", "sensor.photos_status"]);
