@@ -163,21 +163,21 @@ auto: true                 # also add every service found (default: only the lis
 | `sources` | both | all | Integrations to find services in: `uptime_kuma`, `healthchecks`, `ping`, `cert_expiry` |
 | `exclude` | both | — | Entity ids of services found that the card leaves out |
 | `tags` | both | — | Only the services with one of these tags (Uptime Kuma tags, Home Assistant labels or `tags` of `entities`); the groups follow this order |
-| `group_by` | full | `tag` | `tag` (a service with several tags appears in each group; untagged ones go to *Other*), `source` (by integration) or `none` |
-| `sort` | full | `status` | `status` (down, pending, maintenance, unknown, then up; by name within) or `name` |
-| `collapsed` | full | — | Groups folded by default, by name (`[Media, Other]`), or `true` for all. Click a group title (or Tab to it and press Enter or Space) to fold or unfold it; a click elsewhere folds it back. A group with a service down is always unfolded |
-| `only_problems` | full | `false` | Only list the services that are not up or whose certificate needs attention (the header still counts them all) |
-| `show_hero` | full | `true` | The overview at the top: rack picture, status, share of services up, alerts and integrations |
-| `show_latency` | full | `true` | Response time of each service |
-| `show_history` | full | `true` | Uptime bar of each service |
-| `show_uptime` | full | `true` | Uptime percentage of each service (whole percent, rounded down: 99.97 % reads 99 %) |
-| `show_ssl` | full | `true` | Certificate expiry of each service, and its alerts |
-| `hours` | full | `24` | Length of the history of the uptime bar and percentage, in hours |
+| `group_by` | both | `tag` | `tag` (a service with several tags appears in each group; untagged ones go to *Other*), `source` (by integration) or `none` |
+| `sort` | both | `status` | `status` (down, pending, maintenance, unknown, then up; by name within) or `name` |
+| `collapsed` | both | — | Groups folded by default, by name (`[Media, Other]`), or `true` for all (`true` is YAML only: the visual editor keeps it). Click a group title (or Tab to it and press Enter or Space) to fold or unfold it; a click elsewhere folds it back. A group with a service down is always unfolded |
+| `only_problems` | both | `false` | Only list the services that are not up or whose certificate needs attention (the header still counts them all) |
+| `show_hero` | both | `true` | The overview at the top: rack picture, status, share of services up, alerts and integrations |
+| `show_latency` | both | `true` | Response time of each service |
+| `show_history` | both | `true` | Uptime bar of each service |
+| `show_uptime` | both | `true` | Uptime percentage of each service (whole percent, rounded down: 99.97 % reads 99 %) |
+| `show_ssl` | both | `true` | Certificate expiry of each service, and its alerts |
+| `hours` | both | `24` | Length of the history of the uptime bar and percentage, in hours |
 | `ssl_warning_days` | both | `14` | Certificate in orange from this many days left |
 | `ssl_critical_days` | both | `3` | Certificate in red from this many days left (and once expired or invalid) |
-| `latency_warning` | full | `1000` | Response time in orange above this many milliseconds |
+| `latency_warning` | both | `1000` | Response time in orange above this many milliseconds |
 | `max_items` | mini | `5` | Services down listed on the mini card (the others are counted as `+N`) |
-| `zoom` | mini | `true` | Detail button at the top right of the mini card: it shows the full card's content (with the same options, so `group_by`, `only_problems`… can be set on the mini card too) and switches back to the compact view; a click outside the card also brings the compact view back. `false` removes the button |
+| `zoom` | mini | `true` | Detail button at the top right of the mini card: it shows the full card's content (with the same options, so `group_by`, `only_problems`… can be set on the mini card too, in YAML or in its visual editor) and switches back to the compact view; a click outside the card also brings the compact view back. `false` removes the button |
 | `language` | both | Auto | Force language: `fr`, `en`, `de`, `es`, `sr`, `sr-Latn`, `it`, `nl`, `pt`, `pl`, `ro`, `da`, `sv`, `bg`, `ru`, `uk`, `hu`, `sk`, `cs`, `sl`, `lv` or `el` (auto-detects from HA settings) |
 
 ## Screenshots

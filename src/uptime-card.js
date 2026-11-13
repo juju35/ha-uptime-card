@@ -83,6 +83,11 @@ const STRINGS = {
     zoom_out: "Show less",
     // Editor
     entities: "Services (empty: found automatically)",
+    auto: "Also add every service found",
+    sources: "Integrations to find services in (empty: all)",
+    exclude: "Services found to leave out",
+    tags: "Only the services with these tags (empty: all)",
+    collapsed: "Groups folded by default (by name)",
     group_by: "Group by",
     group_tag: "Tag",
     group_source: "Integration",
@@ -138,6 +143,11 @@ const STRINGS = {
     zoom_in: "Afficher le détail",
     zoom_out: "Réduire",
     entities: "Services (vide : détection automatique)",
+    auto: "Ajouter aussi tous les services trouvés",
+    sources: "Intégrations où chercher les services (vide : toutes)",
+    exclude: "Services trouvés à exclure",
+    tags: "Seulement les services avec ces étiquettes (vide : tous)",
+    collapsed: "Groupes repliés par défaut (par nom)",
     group_by: "Regrouper par",
     group_tag: "Étiquette",
     group_source: "Intégration",
@@ -193,6 +203,11 @@ const STRINGS = {
     zoom_in: "Details anzeigen",
     zoom_out: "Weniger anzeigen",
     entities: "Dienste (leer: automatisch gefunden)",
+    auto: "Auch alle gefundenen Dienste hinzufügen",
+    sources: "Integrationen für die Dienstsuche (leer: alle)",
+    exclude: "Gefundene Dienste, die ausgelassen werden",
+    tags: "Nur Dienste mit diesen Tags (leer: alle)",
+    collapsed: "Standardmäßig eingeklappte Gruppen (nach Name)",
     group_by: "Gruppieren nach",
     group_tag: "Tag",
     group_source: "Integration",
@@ -248,6 +263,11 @@ const STRINGS = {
     zoom_in: "Mostrar detalles",
     zoom_out: "Mostrar menos",
     entities: "Servicios (vacío: detección automática)",
+    auto: "Añadir también todos los servicios encontrados",
+    sources: "Integraciones donde buscar servicios (vacío: todas)",
+    exclude: "Servicios encontrados que se excluyen",
+    tags: "Solo los servicios con estas etiquetas (vacío: todos)",
+    collapsed: "Grupos plegados por defecto (por nombre)",
     group_by: "Agrupar por",
     group_tag: "Etiqueta",
     group_source: "Integración",
@@ -303,6 +323,11 @@ const STRINGS = {
     zoom_in: "Mostra dettagli",
     zoom_out: "Mostra meno",
     entities: "Servizi (vuoto: trovati automaticamente)",
+    auto: "Aggiungi anche tutti i servizi trovati",
+    sources: "Integrazioni in cui cercare i servizi (vuoto: tutte)",
+    exclude: "Servizi trovati da escludere",
+    tags: "Solo i servizi con questi tag (vuoto: tutti)",
+    collapsed: "Gruppi chiusi per impostazione predefinita (per nome)",
     group_by: "Raggruppa per",
     group_tag: "Tag",
     group_source: "Integrazione",
@@ -358,6 +383,11 @@ const STRINGS = {
     zoom_in: "Details tonen",
     zoom_out: "Minder tonen",
     entities: "Diensten (leeg: automatisch gevonden)",
+    auto: "Ook alle gevonden diensten toevoegen",
+    sources: "Integraties om diensten in te zoeken (leeg: alle)",
+    exclude: "Gevonden diensten die worden weggelaten",
+    tags: "Alleen diensten met deze labels (leeg: alle)",
+    collapsed: "Standaard ingeklapte groepen (op naam)",
     group_by: "Groeperen op",
     group_tag: "Label",
     group_source: "Integratie",
@@ -413,6 +443,11 @@ const STRINGS = {
     zoom_in: "Mostrar detalhes",
     zoom_out: "Mostrar menos",
     entities: "Serviços (vazio: deteção automática)",
+    auto: "Adicionar também todos os serviços encontrados",
+    sources: "Integrações onde procurar serviços (vazio: todas)",
+    exclude: "Serviços encontrados a excluir",
+    tags: "Apenas os serviços com estas etiquetas (vazio: todos)",
+    collapsed: "Grupos recolhidos por omissão (por nome)",
     group_by: "Agrupar por",
     group_tag: "Etiqueta",
     group_source: "Integração",
@@ -468,6 +503,11 @@ const STRINGS = {
     zoom_in: "Pokaż szczegóły",
     zoom_out: "Pokaż mniej",
     entities: "Usługi (puste: wykrywane automatycznie)",
+    auto: "Dodaj też wszystkie znalezione usługi",
+    sources: "Integracje, w których szukać usług (puste: wszystkie)",
+    exclude: "Znalezione usługi do pominięcia",
+    tags: "Tylko usługi z tymi tagami (puste: wszystkie)",
+    collapsed: "Grupy domyślnie zwinięte (według nazwy)",
     group_by: "Grupuj według",
     group_tag: "Tag",
     group_source: "Integracja",
@@ -523,6 +563,11 @@ const STRINGS = {
     zoom_in: "Прикажи детаље",
     zoom_out: "Прикажи мање",
     entities: "Сервиси (празно: аутоматски пронађени)",
+    auto: "Додај и све пронађене сервисе",
+    sources: "Интеграције у којима се траже сервиси (празно: све)",
+    exclude: "Пронађени сервиси који се изостављају",
+    tags: "Само сервиси са овим ознакама (празно: сви)",
+    collapsed: "Подразумевано скупљене групе (по имену)",
     group_by: "Групиши по",
     group_tag: "Ознака",
     group_source: "Интеграција",
@@ -578,6 +623,11 @@ const STRINGS = {
     zoom_in: "Prikaži detalje",
     zoom_out: "Prikaži manje",
     entities: "Servisi (prazno: automatski pronađeni)",
+    auto: "Dodaj i sve pronađene servise",
+    sources: "Integracije u kojima se traže servisi (prazno: sve)",
+    exclude: "Pronađeni servisi koji se izostavljaju",
+    tags: "Samo servisi sa ovim oznakama (prazno: svi)",
+    collapsed: "Podrazumevano skupljene grupe (po imenu)",
     group_by: "Grupiši po",
     group_tag: "Oznaka",
     group_source: "Integracija",
@@ -633,6 +683,11 @@ const STRINGS = {
     zoom_in: "Afișează detaliile",
     zoom_out: "Afișează mai puțin",
     entities: "Servicii (gol: găsite automat)",
+    auto: "Adaugă și toate serviciile găsite",
+    sources: "Integrări în care se caută servicii (gol: toate)",
+    exclude: "Servicii găsite care sunt omise",
+    tags: "Doar serviciile cu aceste etichete (gol: toate)",
+    collapsed: "Grupuri restrânse implicit (după nume)",
     group_by: "Grupează după",
     group_tag: "Etichetă",
     group_source: "Integrare",
@@ -688,6 +743,11 @@ const STRINGS = {
     zoom_in: "Vis detaljer",
     zoom_out: "Vis mindre",
     entities: "Tjenester (tom: findes automatisk)",
+    auto: "Tilføj også alle fundne tjenester",
+    sources: "Integrationer at finde tjenester i (tom: alle)",
+    exclude: "Fundne tjenester, der udelades",
+    tags: "Kun tjenester med disse mærker (tom: alle)",
+    collapsed: "Grupper foldet sammen som standard (efter navn)",
     group_by: "Gruppér efter",
     group_tag: "Mærke",
     group_source: "Integration",
@@ -743,6 +803,11 @@ const STRINGS = {
     zoom_in: "Visa detaljer",
     zoom_out: "Visa mindre",
     entities: "Tjänster (tomt: hittas automatiskt)",
+    auto: "Lägg även till alla hittade tjänster",
+    sources: "Integrationer att hitta tjänster i (tomt: alla)",
+    exclude: "Hittade tjänster som utelämnas",
+    tags: "Endast tjänster med dessa taggar (tomt: alla)",
+    collapsed: "Grupper hopfällda som standard (efter namn)",
     group_by: "Gruppera efter",
     group_tag: "Tagg",
     group_source: "Integration",
@@ -798,6 +863,11 @@ const STRINGS = {
     zoom_in: "Покажи подробности",
     zoom_out: "Покажи по-малко",
     entities: "Услуги (празно: откриват се автоматично)",
+    auto: "Добави и всички открити услуги",
+    sources: "Интеграции, в които се търсят услуги (празно: всички)",
+    exclude: "Открити услуги, които се изключват",
+    tags: "Само услугите с тези етикети (празно: всички)",
+    collapsed: "Свити по подразбиране групи (по име)",
     group_by: "Групиране по",
     group_tag: "Етикет",
     group_source: "Интеграция",
@@ -853,6 +923,11 @@ const STRINGS = {
     zoom_in: "Показать подробности",
     zoom_out: "Показать меньше",
     entities: "Сервисы (пусто: находятся автоматически)",
+    auto: "Также добавлять все найденные сервисы",
+    sources: "Интеграции для поиска сервисов (пусто: все)",
+    exclude: "Найденные сервисы, которые исключаются",
+    tags: "Только сервисы с этими тегами (пусто: все)",
+    collapsed: "Свёрнутые по умолчанию группы (по имени)",
     group_by: "Группировать по",
     group_tag: "Тег",
     group_source: "Интеграция",
@@ -908,6 +983,11 @@ const STRINGS = {
     zoom_in: "Показати подробиці",
     zoom_out: "Показати менше",
     entities: "Сервіси (порожньо: знаходяться автоматично)",
+    auto: "Також додавати всі знайдені сервіси",
+    sources: "Інтеграції для пошуку сервісів (порожньо: усі)",
+    exclude: "Знайдені сервіси, які виключаються",
+    tags: "Лише сервіси з цими тегами (порожньо: усі)",
+    collapsed: "Типово згорнуті групи (за назвою)",
     group_by: "Групувати за",
     group_tag: "Тег",
     group_source: "Інтеграція",
@@ -963,6 +1043,11 @@ const STRINGS = {
     zoom_in: "Részletek",
     zoom_out: "Kevesebb",
     entities: "Szolgáltatások (üres: automatikus keresés)",
+    auto: "Az összes talált szolgáltatás hozzáadása is",
+    sources: "Integrációk a szolgáltatások kereséséhez (üres: mind)",
+    exclude: "Kihagyott talált szolgáltatások",
+    tags: "Csak az ilyen címkéjű szolgáltatások (üres: mind)",
+    collapsed: "Alapértelmezésben összecsukott csoportok (név szerint)",
     group_by: "Csoportosítás",
     group_tag: "Címke",
     group_source: "Integráció",
@@ -1018,6 +1103,11 @@ const STRINGS = {
     zoom_in: "Zobraziť podrobnosti",
     zoom_out: "Zobraziť menej",
     entities: "Služby (prázdne: nájdené automaticky)",
+    auto: "Pridať aj všetky nájdené služby",
+    sources: "Integrácie na hľadanie služieb (prázdne: všetky)",
+    exclude: "Nájdené služby, ktoré sa vynechajú",
+    tags: "Iba služby s týmito štítkami (prázdne: všetky)",
+    collapsed: "Predvolene zbalené skupiny (podľa názvu)",
     group_by: "Zoskupiť podľa",
     group_tag: "Štítok",
     group_source: "Integrácia",
@@ -1073,6 +1163,11 @@ const STRINGS = {
     zoom_in: "Zobrazit podrobnosti",
     zoom_out: "Zobrazit méně",
     entities: "Služby (prázdné: nalezeny automaticky)",
+    auto: "Přidat i všechny nalezené služby",
+    sources: "Integrace pro hledání služeb (prázdné: všechny)",
+    exclude: "Nalezené služby, které se vynechají",
+    tags: "Jen služby s těmito štítky (prázdné: všechny)",
+    collapsed: "Výchozí sbalené skupiny (podle názvu)",
     group_by: "Seskupit podle",
     group_tag: "Štítek",
     group_source: "Integrace",
@@ -1128,6 +1223,11 @@ const STRINGS = {
     zoom_in: "Pokaži podrobnosti",
     zoom_out: "Pokaži manj",
     entities: "Storitve (prazno: samodejno najdene)",
+    auto: "Dodaj tudi vse najdene storitve",
+    sources: "Integracije za iskanje storitev (prazno: vse)",
+    exclude: "Najdene storitve, ki se izpustijo",
+    tags: "Samo storitve s temi oznakami (prazno: vse)",
+    collapsed: "Privzeto strnjene skupine (po imenu)",
     group_by: "Združi po",
     group_tag: "Oznaka",
     group_source: "Integracija",
@@ -1183,6 +1283,11 @@ const STRINGS = {
     zoom_in: "Rādīt detaļas",
     zoom_out: "Rādīt mazāk",
     entities: "Pakalpojumi (tukšs: atrod automātiski)",
+    auto: "Pievienot arī visus atrastos pakalpojumus",
+    sources: "Integrācijas pakalpojumu meklēšanai (tukšs: visas)",
+    exclude: "Atrastie pakalpojumi, kurus izlaist",
+    tags: "Tikai pakalpojumi ar šīm birkām (tukšs: visi)",
+    collapsed: "Pēc noklusējuma sakļautās grupas (pēc nosaukuma)",
     group_by: "Grupēt pēc",
     group_tag: "Birka",
     group_source: "Integrācija",
@@ -1238,6 +1343,11 @@ const STRINGS = {
     zoom_in: "Εμφάνιση λεπτομερειών",
     zoom_out: "Εμφάνιση λιγότερων",
     entities: "Υπηρεσίες (κενό: αυτόματος εντοπισμός)",
+    auto: "Προσθήκη και όλων των υπηρεσιών που βρέθηκαν",
+    sources: "Ενσωματώσεις για εύρεση υπηρεσιών (κενό: όλες)",
+    exclude: "Υπηρεσίες που βρέθηκαν και παραλείπονται",
+    tags: "Μόνο οι υπηρεσίες με αυτές τις ετικέτες (κενό: όλες)",
+    collapsed: "Ομάδες κλειστές από προεπιλογή (κατά όνομα)",
     group_by: "Ομαδοποίηση κατά",
     group_tag: "Ετικέτα",
     group_source: "Ενσωμάτωση",
@@ -2647,6 +2757,7 @@ class UptimeEditorBase extends HTMLElement {
     return [
       { name: "title", selector: { text: {} } },
       { name: "entities", selector: { entity: { multiple: true, filter: [{ domain: "binary_sensor" }, { domain: "sensor" }] } } },
+      ...this._discoveryFields(),
       {
         type: "grid",
         name: "",
@@ -2671,6 +2782,29 @@ class UptimeEditorBase extends HTMLElement {
     ];
   }
 
+  // What the card finds by itself: `auto`, the integrations to look in, the services found to leave out, and the tag
+  // and folded-group filters (lists of names). `collapsed: true` (every group) stays as written, out of the form.
+  _discoveryFields() {
+    const found = this._hass ? discover(this._hass).map((s) => s.key) : [];
+    const excluded = [].concat(this._config.exclude || []).filter((id) => !found.includes(id));
+    const ids = [...found, ...excluded];
+    return [
+      { name: "auto", selector: { boolean: {} } },
+      {
+        name: "sources",
+        selector: { select: { multiple: true, mode: "list", options: SOURCE_ORDER.filter((k) => SOURCES[k].label).map((value) => ({ value, label: SOURCES[value].label })) } },
+      },
+      ...(ids.length ? [{ name: "exclude", selector: { entity: { multiple: true, include_entities: ids } } }] : []),
+      { name: "tags", selector: { text: { multiple: true } } },
+      ...(this._config.collapsed === true ? [] : [{ name: "collapsed", selector: { text: { multiple: true } } }]),
+    ];
+  }
+
+  // `auto` defaults to true without `entities`, else false.
+  static autoDefault(config) {
+    return ![].concat(config.entities || []).length;
+  }
+
   _defaults() {
     return { ...Object.fromEntries(this.constructor.toggles), group_by: "tag", sort: "status", ...Object.fromEntries(this.constructor.numbers.map((n) => [n, DEFAULTS[n]])) };
   }
@@ -2690,6 +2824,9 @@ class UptimeEditorBase extends HTMLElement {
           config.entities = config.entities.map((id) => prev.get(id) ?? id);
         }
         const defaults = this._defaults();
+        // `auto` left at its default (the one shown, or the one of the new `entities`) stays out of the YAML.
+        const auto = this.constructor.autoDefault;
+        if ((this._config.auto === undefined && config.auto === auto(this._config)) || config.auto === auto(config)) delete config.auto;
         for (const [k, v] of Object.entries(config)) {
           // Keep the YAML minimal: drop empty values and options left at their default.
           if (v === "" || v === undefined || v === null || (Array.isArray(v) && !v.length) || (k in defaults && JSON.stringify(v) === JSON.stringify(defaults[k])))
@@ -2702,6 +2839,9 @@ class UptimeEditorBase extends HTMLElement {
     }
     const data = { ...this._defaults(), ...this._config };
     data.entities = [].concat(this._config.entities || []).map((e) => (typeof e === "string" ? e : e?.entity)).filter(Boolean);
+    data.auto ??= this.constructor.autoDefault(this._config);
+    for (const k of ["sources", "exclude", "tags"]) if (data[k] !== undefined) data[k] = [].concat(data[k]).map(String);
+    if (data.collapsed !== undefined && data.collapsed !== true) data.collapsed = [].concat(data.collapsed).map(String);
     this._form.hass = this._hass;
     const h = this._hass;
     const dataDeps = [this._config];
@@ -2709,7 +2849,8 @@ class UptimeEditorBase extends HTMLElement {
       this._dataDeps = dataDeps;
       this._form.data = data;
     }
-    const deps = [lang(h, this._config)];
+    // The services found (the exclude list) and `collapsed: true` (no field) change the form too.
+    const deps = [lang(h, this._config), h.entities, this._config.collapsed === true, String(this._config.exclude ?? "")];
     if (!sameDeps(this._schemaDeps, deps)) {
       this._schemaDeps = deps;
       this._form.schema = this._schema();

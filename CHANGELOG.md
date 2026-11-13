@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.0.2 - 2026-11-14
+
+### Fixes
+- Visual editors: `auto`, `sources`, `exclude`, `tags` and `collapsed` were missing. `auto` shows its default (on without `entities`) and is written only when changed, `sources` lists the supported integrations, `exclude` offers the services found, `tags` and `collapsed` take a list of names; their labels in the 22 languages. `collapsed: true` (every group) stays YAML only.
+- README: the full card's options that the mini card's detail view uses are marked for both cards, as its visual editor already offered them.
+
 ## 1.0.1 - 2026-11-13
 
 ### Fixes

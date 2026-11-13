@@ -309,6 +309,39 @@ test("the visual editor keeps the YAML minimal and the entities' own options", (
   assert.match(names, /"max_items"/);
 });
 
+test("the visual editors offer auto, sources, exclude, tags and collapsed, at their defaults out of the YAML", () => {
+  const names = (schema) => schema.flatMap((f) => (f.schema ? names(f.schema) : [f.name]));
+  for (const Editor of [uc.UptimeCardEditor, uc.UptimeMiniCardEditor]) {
+    const ed = new Editor();
+    ed.setConfig({});
+    ed.hass = makeHass();
+    const form = ed._form;
+    const fields = names(form.schema);
+    for (const n of ["auto", "sources", "exclude", "tags", "collapsed"]) assert.ok(fields.includes(n), n);
+    assert.deepEqual([...form.schema.find((f) => f.name === "sources").selector.select.options.map((o) => o.value)], ["uptime_kuma", "healthchecks", "ping", "cert_expiry"]);
+    assert.ok(form.schema.find((f) => f.name === "exclude").selector.entity.include_entities.length);
+    assert.equal(form.data.auto, true, "auto shown at its default without entities");
+    let out;
+    ed.dispatchEvent = (ev) => {
+      out = ev.detail.config;
+    };
+    const change = (value) => form.listeners["value-changed"]({ stopPropagation() {}, detail: { value: { ...form.data, ...value } } });
+    change({ tags: ["Media"], collapsed: ["Other"] });
+    assert.deepEqual(JSON.parse(JSON.stringify(out)), { tags: ["Media"], collapsed: ["Other"] });
+    // Entities added: auto's shown default (true) is not written, the new default (false) applies.
+    change({ entities: ["binary_sensor.nas"] });
+    assert.equal(out.auto, undefined);
+    change({ entities: ["binary_sensor.nas"], auto: true, sources: ["ping"] });
+    assert.equal(out.auto, true);
+    assert.deepEqual([...out.sources], ["ping"]);
+  }
+  const all = new uc.UptimeCardEditor();
+  all.setConfig({ collapsed: true, tags: "Media" });
+  all.hass = makeHass();
+  assert.ok(!names(all._form.schema).includes("collapsed"), "collapsed: true stays YAML only");
+  assert.deepEqual([...all._form.data.tags], ["Media"]);
+});
+
 test("the cards are registered for the card picker, with the visual editors", () => {
   assert.deepEqual([...uc.window.customCards.map((c) => c.type)], ["uptime-card", "uptime-mini-card"]);
   assert.equal(uc.UptimeCard.getConfigElement().constructor, uc.UptimeCardEditor);
