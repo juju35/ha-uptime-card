@@ -8,6 +8,11 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/juju35/ha-uptime-card/blob/main/LICENSE)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-FFDD00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/julienstep9)
 
+<p align="center">
+  <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/images/uptime_kuma.png" alt="Uptime Kuma" width="64">&nbsp;&nbsp;
+  <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/images/healthchecksio.png" alt="Healthchecks.io" width="64">
+</p>
+
 Lovelace cards for Home Assistant to watch your services at a glance: which ones are **up, down, pending or in maintenance**, their **response time**, a **24-hour uptime bar** from the history, the **expiry of their SSL certificates** with an alert before it is too late, all **grouped by tag**.
 
 The cards work on top of the integrations you already use — [Uptime Kuma](https://www.home-assistant.io/integrations/uptime_kuma/), [Healthchecks.io](https://github.com/custom-components/healthchecksio), [Ping](https://www.home-assistant.io/integrations/ping/), any **connectivity** binary sensor and [Certificate Expiry](https://www.home-assistant.io/integrations/cert_expiry/). Services are **discovered automatically** from the Home Assistant registries: you don't pick the entities one by one, and it works whatever your Home Assistant language or entity ids. A drawn server rack sums up the state of everything, and animates with it.
@@ -41,8 +46,8 @@ The cards work on top of the integrations you already use — [Uptime Kuma](http
 
 | Integration | What the cards show |
 |---|---|
-| <img src="https://raw.githubusercontent.com/home-assistant/brands/master/core_integrations/uptime_kuma/icon.png" alt="" width="16"> [Uptime Kuma](https://www.home-assistant.io/integrations/uptime_kuma/) (core, Uptime Kuma 2.0 or later) | One service per monitor: status (up, down, pending, maintenance), response time, certificate days left, URL or hostname, monitor type; **tags** when the monitor's *Tags* sensor is enabled; 1-day uptime when its *Uptime (1 day)* sensor is enabled |
-| <img src="https://raw.githubusercontent.com/home-assistant/brands/master/custom_integrations/healthchecksio/icon.png" alt="" width="16"> [Healthchecks.io](https://github.com/custom-components/healthchecksio) (custom, `healthchecksio`) | One service per check: up or down, time of the last ping |
+| <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/images/uptime_kuma.png" alt="" width="16"> [Uptime Kuma](https://www.home-assistant.io/integrations/uptime_kuma/) (core, Uptime Kuma 2.0 or later) | One service per monitor: status (up, down, pending, maintenance), response time, certificate days left, URL or hostname, monitor type; **tags** when the monitor's *Tags* sensor is enabled; 1-day uptime when its *Uptime (1 day)* sensor is enabled |
+| <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/images/healthchecksio.png" alt="" width="16"> [Healthchecks.io](https://github.com/custom-components/healthchecksio) (custom, `healthchecksio`) | One service per check: up or down, time of the last ping |
 | [Ping](https://www.home-assistant.io/integrations/ping/) (core) | One service per host: connected or not, round trip time when its *Round trip time average* sensor is enabled |
 | [Certificate Expiry](https://www.home-assistant.io/integrations/cert_expiry/) (core) | The expiry of a certificate: on the row of the service of the same host (an Uptime Kuma URL or hostname, a Ping host), else a row of its own (down once expired or invalid) |
 | Any binary sensor or sensor (listed in `entities`) | A `connectivity` binary sensor is up when on, a `problem` one is down when on; a sensor reading `up`, `on`, `online`, `ok`, `connected`… is up, `down`, `off`, `offline`, `error`, `problem`… is down |
