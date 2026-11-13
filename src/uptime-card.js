@@ -1815,6 +1815,42 @@ const isOutside = (card, ev) => {
   return !path.includes(card) && !path.some((n) => DIALOG_TAGS.has(n.tagName));
 };
 
+// "A click elsewhere" is caught on the pointer, not only on the click event: on iOS (Safari and the companion app)
+// a tap on something that is not clickable (the background, an empty spot, a card with no action) sends no click to
+// the page. It counts when the press and the release are both outside the card (a slider dragged out of the card
+// does not fold it), and a scroll does not count (the browser cancels the pointer). Keyboard clicks still go through
+// the click event.
+const watchOutside = (card, handler) => {
+  let downOutside = false;
+  const onDown = (ev) => {
+    downOutside = isOutside(card, ev);
+  };
+  const onUp = (ev) => {
+    if (downOutside && isOutside(card, ev)) handler(ev);
+    downOutside = false;
+  };
+  const onClick = (ev) => {
+    if (ev.detail === 0 && isOutside(card, ev)) handler(ev);
+  };
+  return {
+    on() {
+      document.addEventListener("pointerdown", onDown, true);
+      document.addEventListener("pointerup", onUp, true);
+      document.addEventListener("click", onClick, true);
+    },
+    // A tap (press and release at the same spot), for the tests.
+    tap(ev) {
+      onDown(ev);
+      onUp(ev);
+    },
+    off() {
+      document.removeEventListener("pointerdown", onDown, true);
+      document.removeEventListener("pointerup", onUp, true);
+      document.removeEventListener("click", onClick, true);
+    },
+  };
+};
+
 const FOCUS_SELECTOR = "[data-action], [data-entity]";
 const focusKey = (el) => {
   const data = Object.entries({ ...el.dataset });
@@ -1874,7 +1910,9 @@ class UptimeBase extends HTMLElement {
       this._toggled = new Map();
       this._update();
     };
-    document.addEventListener("click", this._onOutside, true);
+    (this._outside ??= watchOutside(this, (ev) => this._onOutside(ev))).on();
+    // Back on the page after leaving it: rendered again in its default state.
+    if (this._hass && this._config) this._update();
     // "Down for 12 min" moves on its own, and the uptime bar slides: re-checked every minute.
     clearInterval(this._tick);
     this._minute = Math.floor(Date.now() / 60000);
@@ -1887,7 +1925,10 @@ class UptimeBase extends HTMLElement {
   disconnectedCallback() {
     clearInterval(this._tick);
     this._tick = null;
-    document.removeEventListener("click", this._onOutside, true);
+    this._outside?.off();
+    // Left (another dashboard view, a conditional card hidden): back to the defaults, so that the card does not come
+    // back unfolded or with its popup open.
+    this._toggled = new Map();
   }
 
   setConfig(config) {
@@ -2440,12 +2481,14 @@ class UptimeMiniCard extends UptimeCard {
 
   connectedCallback() {
     super.connectedCallback();
-    document.addEventListener("click", this._onUnzoom, true);
+    (this._unzoom ??= watchOutside(this, (ev) => this._onUnzoom(ev))).on();
   }
 
   disconnectedCallback() {
     super.disconnectedCallback();
-    document.removeEventListener("click", this._onUnzoom, true);
+    this._unzoom?.off();
+    // Back to the compact view once off the screen (see the full card).
+    this._zoomed = false;
   }
 
   getCardSize() {

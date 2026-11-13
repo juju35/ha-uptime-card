@@ -125,6 +125,24 @@ test("a group title folds and unfolds its group, a click elsewhere folds it back
   card.disconnectedCallback();
 });
 
+test("folding: a tap elsewhere (pointer), not a press in the card released outside; leaving the page folds back", () => {
+  const card = newCard({ group_by: "source" });
+  card.connectedCallback();
+  click(card, { action: "toggle_group", group: "Ping", problem: "0" });
+  // A slider pressed in the card and released outside of it: nothing folds back.
+  card._outside.tap({ composedPath: () => [card] });
+  assert.match(html(card), /data-group="Ping" data-problem="0" aria-expanded="false"/);
+  // A tap on a spot that sends no click (iOS): the pointer alone folds it back.
+  card._outside.tap({ composedPath: () => [] });
+  assert.match(html(card), /data-group="Ping" data-problem="0" aria-expanded="true"/);
+  // Left with the group folded and back: in its default state.
+  click(card, { action: "toggle_group", group: "Ping", problem: "0" });
+  card.disconnectedCallback();
+  card.connectedCallback();
+  assert.match(html(card), /data-group="Ping" data-problem="0" aria-expanded="true"/);
+  card.disconnectedCallback();
+});
+
 test("filters: only_problems, tags, sources, exclude and sort by name", () => {
   assert.deepEqual(rows(newCard({ only_problems: true, group_by: "none" })), ["sensor.media_status", "sensor.photos_status", "sensor.cloud_status"]);
   assert.deepEqual(rows(newCard({ tags: ["Media"] })).sort(), ["sensor.media_status", "sensor.photos_status"]);
