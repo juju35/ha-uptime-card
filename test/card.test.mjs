@@ -110,7 +110,8 @@ test("the illustrated header: rack in its server room, status icon, night mode, 
   assert.match(html(newCard({ show_ssl: false, show_latency: false }, makeHass(withOverrides(allUp)))), /type-icon ok/);
   assert.match(html(newCard({}, makeHass(states, { themes: { darkMode: true } }))), /class="banner night"/);
   const sun = { "sun.sun": { entity_id: "sun.sun", state: "below_horizon", attributes: {} } };
-  assert.match(html(newCard({}, makeHass({ ...states, ...sun }))), /class="banner night"/);
+  assert.match(html(newCard({}, makeHass({ ...states, ...sun }))), /class="banner"/, "a light theme keeps the day after sunset");
+  assert.match(html(newCard({}, makeHass({ ...states, ...sun }, { themes: { darkMode: true } }))), /class="banner night"/);
   assert.match(html(newCard({ illustration_theme: "day" }, makeHass({ ...states, ...sun }))), /class="banner"/);
   assert.match(html(newCard({ illustration_theme: "night" })), /class="banner night"/);
   // The dark theme gives the night picture even while the sun is up; a light theme keeps the day; forced wins.

@@ -1675,13 +1675,13 @@ const sceneSvg = (status, night, uid) => {
     <circle class="${live ? "uc-blink" : ""}" cx="34" cy="28" r="1.4" fill="${led}" style="animation-delay:.8s" opacity=".7"/></svg>`;
 };
 
-// Night picture: forced by illustration_theme, else the sun below the horizon or Home Assistant's dark theme
-// (an unknown or unavailable sun leaves the theme alone to decide).
+// Night picture: forced by illustration_theme, else Home Assistant's dark theme alone (a light theme keeps the day
+// picture after sunset).
 const isNight = (hass, config) => {
   const theme = config?.illustration_theme;
   if (theme === "night") return true;
   if (theme === "day") return false;
-  return hass?.states?.["sun.sun"]?.state === "below_horizon" || !!hass?.themes?.darkMode;
+  return !!hass?.themes?.darkMode;
 };
 
 // The header icon's colour on the banner follows the overall status: all up in green, pending or a warning in amber,
@@ -2242,7 +2242,7 @@ class UptimeBase extends HTMLElement {
     const h = this._hass;
     if (!h?.entities || !this._config) return null;
     const ids = this._services().flatMap((s) => [s.status, s.latency, s.cert, s.uptime, s.url, s.hostname, s.type, s.tags_entity]);
-    return [h.entities, h.devices, h.language, h.locale, h.themes?.darkMode, this._illustrated() ? h.states["sun.sun"] : undefined, this._rev, this._minute, ...ids.map((id) => (id ? h.states[id] : undefined))];
+    return [h.entities, h.devices, h.language, h.locale, h.themes?.darkMode, this._rev, this._minute, ...ids.map((id) => (id ? h.states[id] : undefined))];
   }
 
   connectedCallback() {
