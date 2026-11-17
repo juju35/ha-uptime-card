@@ -84,12 +84,16 @@ test("the full card: header summary and chip, problems first, latency, certifica
   assert.equal((bar.match(/<i /g) || []).length, 48);
   assert.match(bar, /class="crit"/);
   assert.match(dns, /<span class="pct warn" title="Uptime">97 %<\/span>/);
+  // The hero's big line is the average uptime, not the status already in the pill.
+  assert.match(h, /<div class="state uptime (ok|warn|crit)"><span class="v">\d+ %<\/span><span class="cap">Uptime · Last 24 hours<\/span><\/div>/);
+  assert.doesNotMatch(h, /<div class="state crit">1 down<\/div>/);
+  assert.doesNotMatch(html(newCard({ group_by: "none", show_uptime: false }, makeHass(states, { callWS }))), /class="state uptime/);
 });
 
 test("the hero: picture of the overall state, alerts of the service down and of the closest certificate, sources", async () => {
   const card = newCard({}, makeHass());
   const h = html(card);
-  assert.match(h, /<div class="state crit">1 down<\/div>/);
+  assert.doesNotMatch(h, /<div class="state crit">1 down<\/div>/, "the status is only in the header pill");
   assert.match(h, /alert-line crit[^>]*data-entity="sensor\.media_status"[^>]*>.*Media server: Down for 14 min/);
   assert.match(h, /alert-line warn[^>]*data-entity="sensor\.cloud_certificate_expiry"[^>]*>.*Cloud drive: SSL 9 days/);
   assert.match(h, /<span>Uptime Kuma<\/span><b>7<\/b>/);

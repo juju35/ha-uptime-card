@@ -2032,6 +2032,10 @@ const FULL_STYLE = `
   .info { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 6px; }
   .state { font-size: 22px; font-weight: 400; line-height: 1.1; overflow-wrap: anywhere;
            color: color-mix(in srgb, var(--c, var(--primary-text-color)) 50%, var(--primary-text-color)); }
+  .state.uptime { display: flex; align-items: baseline; flex-wrap: wrap; column-gap: 8px; row-gap: 2px; }
+  .state.uptime.ok { color: var(--primary-text-color); }
+  .state.uptime .v { font-variant-numeric: tabular-nums; white-space: nowrap; }
+  .state.uptime .cap { font-size: 12px; color: var(--secondary-text-color); }
   .ratio-line { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--secondary-text-color); }
   .ratio-line .ratio { flex: 1; max-width: 160px; }
   .ratio-line .v { font-weight: 500; color: var(--primary-text-color); white-space: nowrap; }
@@ -2794,6 +2798,18 @@ class UptimeCard extends UptimeBase {
 
   // The hero: the rack picture of the overall state, the state in words, the share of services up, the service
   // down the longest and the most urgent certificate, and the integrations the services come from.
+  // The hero's big line: the average uptime of the services over the history window (the status itself is in the
+  // header pill, the share of services up in its subtitle). Nothing when no service has an uptime yet.
+  _uptimeLine(all) {
+    if (this._config.show_uptime === false) return "";
+    const shares = all.map((v) => v.share).filter((x) => x !== null && x !== undefined && Number.isFinite(x));
+    if (!shares.length) return "";
+    const avg = shares.reduce((a, b) => a + b, 0) / shares.length;
+    const pc = avg >= 99 ? "ok" : avg >= 95 ? "warn" : "crit";
+    const caption = `${this._t("uptime")} · ${this._t("history", { h: this._opt("hours") })}`;
+    return `<div class="state uptime ${pc}"><span class="v">${esc(fmtPct(avg, this._locale()))}</span><span class="cap">${esc(caption)}</span></div>`;
+  }
+
   _hero(all, sum) {
     const c = this._config;
     const locale = this._locale();
@@ -2820,7 +2836,7 @@ class UptimeCard extends UptimeBase {
     return `<div class="hero">
         ${this._illustrated() ? "" : this._pictureBlock(overall, all)}
         <div class="info">
-          <div class="state ${sum.chip?.cls || ""}">${esc(sum.chip?.text || "")}</div>
+          ${this._uptimeLine(all)}
           <div class="ratio-line">${this._ratio(sum)}<span class="v">${esc(this._t("summary", { up: sum.up.toLocaleString(locale), total: sum.total.toLocaleString(locale) }))}</span></div>
           ${lines.join("")}
           ${tags.length > 1 ? `<div class="tags">${tags.join("")}</div>` : ""}
