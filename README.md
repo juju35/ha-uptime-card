@@ -161,7 +161,7 @@ auto: true                 # also add every service found (default: only the lis
 | `show_title` | both | `true` | Show the title in the header (e.g. `false` under a section heading of your own) |
 | `show_subtitle` | both | `true` | Show the subtitle under the title (`1 down · 9/11 up` on the illustrated header, `9/11 up` on the classic one) |
 | `illustration` | both | `true` | Illustrated header (90 px): the rack of the overall status, with its animations, in a server room on a concrete floor strip, the title and status on its left and the heart-pulse icon in the status colour (green all up, amber pending or warning, red down, blue maintenance, grey unknown). `false` keeps the classic header, the rack then sits in the overview |
-| `illustration_theme` | both | `auto` | Illustrated header: `auto` (night after sunset, from `sun.sun`, else Home Assistant's dark mode), `day` or `night` |
+| `illustration_theme` | both | `auto` | Illustrated header: `auto` (night after sunset, from `sun.sun`, or with Home Assistant's dark mode even while the sun is up), `day` or `night` |
 | `entities` | both | — | Services to show, in this order: entity ids, or objects with `entity` and optional `name`, `tags` (list), `latency_entity` (milliseconds or seconds), `cert_entity` (a timestamp, or days left) and `uptime_entity` (percent). Without it, every service found is shown |
 | `auto` | both | `true` without `entities`, else `false` | Also add every service found to the listed ones |
 | `sources` | both | all | Integrations to find services in: `uptime_kuma`, `healthchecks`, `ping`, `cert_expiry` |

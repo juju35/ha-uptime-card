@@ -109,6 +109,12 @@ test("the illustrated header: rack in its server room, status icon, night mode, 
   assert.match(html(newCard({}, makeHass({ ...states, ...sun }))), /class="banner night"/);
   assert.match(html(newCard({ illustration_theme: "day" }, makeHass({ ...states, ...sun }))), /class="banner"/);
   assert.match(html(newCard({ illustration_theme: "night" })), /class="banner night"/);
+  // The dark theme gives the night picture even while the sun is up; a light theme keeps the day; forced wins.
+  const up = (darkMode) => makeHass({ ...states, "sun.sun": { entity_id: "sun.sun", state: "above_horizon", attributes: {} } }, { themes: { darkMode } });
+  assert.match(html(newCard({}, up(true))), /class="banner night"/);
+  assert.match(html(newCard({}, up(false))), /class="banner"/);
+  assert.match(html(newCard({ illustration_theme: "day" }, up(true))), /class="banner"/);
+  assert.match(html(newCard({ illustration_theme: "night" }, up(false))), /class="banner night"/);
   const ids = [newCard(), newCard()].map((c) => html(c).match(/id="(uc-cable-\d+)"/)[1]);
   assert.notEqual(ids[0], ids[1]);
   const mini = html(newCard({}, makeHass(), uc.UptimeMiniCard));

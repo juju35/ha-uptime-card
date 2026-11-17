@@ -1675,14 +1675,13 @@ const sceneSvg = (status, night, uid) => {
     <circle class="${live ? "uc-blink" : ""}" cx="34" cy="28" r="1.4" fill="${led}" style="animation-delay:.8s" opacity=".7"/></svg>`;
 };
 
-// Night picture: forced by illustration_theme, else the sun below the horizon, else Home Assistant's dark mode.
+// Night picture: forced by illustration_theme, else the sun below the horizon or Home Assistant's dark theme
+// (an unknown or unavailable sun leaves the theme alone to decide).
 const isNight = (hass, config) => {
   const theme = config?.illustration_theme;
   if (theme === "night") return true;
   if (theme === "day") return false;
-  const sun = hass?.states?.["sun.sun"];
-  if (sun && sun.state !== "unavailable" && sun.state !== "unknown") return sun.state === "below_horizon";
-  return !!hass?.themes?.darkMode;
+  return hass?.states?.["sun.sun"]?.state === "below_horizon" || !!hass?.themes?.darkMode;
 };
 
 // The header icon's colour on the banner follows the overall status: all up in green, pending or a warning in amber,
