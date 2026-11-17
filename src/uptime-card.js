@@ -112,6 +112,11 @@ const STRINGS = {
     zoom_helper: "Switches the mini card to the full list and back",
     language: "Language",
     lang_auto: "Automatic (Home Assistant language)",
+    illustration: "Illustration",
+    illustration_theme: "Illustration theme",
+    theme_auto: "Automatic (sun)",
+    theme_day: "Day",
+    theme_night: "Night",
   },
   fr: {
     title: "Services",
@@ -172,6 +177,11 @@ const STRINGS = {
     zoom_helper: "Bascule la mini-carte vers la liste complète et inversement",
     language: "Langue",
     lang_auto: "Automatique (langue de Home Assistant)",
+    illustration: "Illustration",
+    illustration_theme: "Thème de l'illustration",
+    theme_auto: "Automatique (soleil)",
+    theme_day: "Jour",
+    theme_night: "Nuit",
   },
   de: {
     title: "Dienste",
@@ -232,6 +242,11 @@ const STRINGS = {
     zoom_helper: "Schaltet die Mini-Karte auf die vollständige Liste um und zurück",
     language: "Sprache",
     lang_auto: "Automatisch (Sprache von Home Assistant)",
+    illustration: "Illustration",
+    illustration_theme: "Illustrationsthema",
+    theme_auto: "Automatisch (Sonne)",
+    theme_day: "Tag",
+    theme_night: "Nacht",
   },
   es: {
     title: "Servicios",
@@ -292,6 +307,11 @@ const STRINGS = {
     zoom_helper: "Cambia la minitarjeta a la lista completa y viceversa",
     language: "Idioma",
     lang_auto: "Automático (idioma de Home Assistant)",
+    illustration: "Ilustración",
+    illustration_theme: "Tema de la ilustración",
+    theme_auto: "Automático (sol)",
+    theme_day: "Día",
+    theme_night: "Noche",
   },
   it: {
     title: "Servizi",
@@ -352,6 +372,11 @@ const STRINGS = {
     zoom_helper: "Passa dalla mini scheda all'elenco completo e viceversa",
     language: "Lingua",
     lang_auto: "Automatica (lingua di Home Assistant)",
+    illustration: "Illustrazione",
+    illustration_theme: "Tema dell'illustrazione",
+    theme_auto: "Automatico (sole)",
+    theme_day: "Giorno",
+    theme_night: "Notte",
   },
   nl: {
     title: "Diensten",
@@ -412,6 +437,11 @@ const STRINGS = {
     zoom_helper: "Schakelt de minikaart naar de volledige lijst en terug",
     language: "Taal",
     lang_auto: "Automatisch (taal van Home Assistant)",
+    illustration: "Illustratie",
+    illustration_theme: "Thema van de illustratie",
+    theme_auto: "Automatisch (zon)",
+    theme_day: "Dag",
+    theme_night: "Nacht",
   },
   pt: {
     title: "Serviços",
@@ -472,6 +502,11 @@ const STRINGS = {
     zoom_helper: "Alterna o minicartão para a lista completa e vice-versa",
     language: "Idioma",
     lang_auto: "Automático (idioma do Home Assistant)",
+    illustration: "Ilustração",
+    illustration_theme: "Tema da ilustração",
+    theme_auto: "Automático (sol)",
+    theme_day: "Dia",
+    theme_night: "Noite",
   },
   pl: {
     title: "Usługi",
@@ -532,6 +567,11 @@ const STRINGS = {
     zoom_helper: "Przełącza mini kartę na pełną listę i z powrotem",
     language: "Język",
     lang_auto: "Automatyczny (język Home Assistant)",
+    illustration: "Ilustracja",
+    illustration_theme: "Motyw ilustracji",
+    theme_auto: "Automatyczny (słońce)",
+    theme_day: "Dzień",
+    theme_night: "Noc",
   },
   sr: {
     title: "Сервиси",
@@ -592,6 +632,11 @@ const STRINGS = {
     zoom_helper: "Пребацује мини картицу на целу листу и назад",
     language: "Језик",
     lang_auto: "Аутоматски (језик Home Assistant-а)",
+    illustration: "Илустрација",
+    illustration_theme: "Тема илустрације",
+    theme_auto: "Аутоматски (сунце)",
+    theme_day: "Дан",
+    theme_night: "Ноћ",
   },
   "sr-Latn": {
     title: "Servisi",
@@ -652,6 +697,11 @@ const STRINGS = {
     zoom_helper: "Prebacuje mini karticu na celu listu i nazad",
     language: "Jezik",
     lang_auto: "Automatski (jezik Home Assistant-a)",
+    illustration: "Ilustracija",
+    illustration_theme: "Tema ilustracije",
+    theme_auto: "Automatski (sunce)",
+    theme_day: "Dan",
+    theme_night: "Noć",
   },
   ro: {
     title: "Servicii",
@@ -712,6 +762,11 @@ const STRINGS = {
     zoom_helper: "Comută mini cardul la lista completă și înapoi",
     language: "Limbă",
     lang_auto: "Automat (limba Home Assistant)",
+    illustration: "Ilustrație",
+    illustration_theme: "Tema ilustrației",
+    theme_auto: "Automat (soare)",
+    theme_day: "Zi",
+    theme_night: "Noapte",
   },
   da: {
     title: "Tjenester",
@@ -772,6 +827,11 @@ const STRINGS = {
     zoom_helper: "Skifter minikortet til den fulde liste og tilbage",
     language: "Sprog",
     lang_auto: "Automatisk (Home Assistants sprog)",
+    illustration: "Illustration",
+    illustration_theme: "Illustrationstema",
+    theme_auto: "Automatisk (sol)",
+    theme_day: "Dag",
+    theme_night: "Nat",
   },
   sv: {
     title: "Tjänster",
@@ -832,6 +892,11 @@ const STRINGS = {
     zoom_helper: "Växlar minikortet till hela listan och tillbaka",
     language: "Språk",
     lang_auto: "Automatiskt (Home Assistants språk)",
+    illustration: "Illustration",
+    illustration_theme: "Illustrationstema",
+    theme_auto: "Automatiskt (sol)",
+    theme_day: "Dag",
+    theme_night: "Natt",
   },
   bg: {
     title: "Услуги",
@@ -892,6 +957,11 @@ const STRINGS = {
     zoom_helper: "Превключва мини картата към пълния списък и обратно",
     language: "Език",
     lang_auto: "Автоматично (езикът на Home Assistant)",
+    illustration: "Илюстрация",
+    illustration_theme: "Тема на илюстрацията",
+    theme_auto: "Автоматично (слънце)",
+    theme_day: "Ден",
+    theme_night: "Нощ",
   },
   ru: {
     title: "Сервисы",
@@ -952,6 +1022,11 @@ const STRINGS = {
     zoom_helper: "Переключает мини-карточку на полный список и обратно",
     language: "Язык",
     lang_auto: "Автоматически (язык Home Assistant)",
+    illustration: "Иллюстрация",
+    illustration_theme: "Тема иллюстрации",
+    theme_auto: "Автоматически (солнце)",
+    theme_day: "День",
+    theme_night: "Ночь",
   },
   uk: {
     title: "Сервіси",
@@ -1012,6 +1087,11 @@ const STRINGS = {
     zoom_helper: "Перемикає міні-картку на повний список і назад",
     language: "Мова",
     lang_auto: "Автоматично (мова Home Assistant)",
+    illustration: "Ілюстрація",
+    illustration_theme: "Тема ілюстрації",
+    theme_auto: "Автоматично (сонце)",
+    theme_day: "День",
+    theme_night: "Ніч",
   },
   hu: {
     title: "Szolgáltatások",
@@ -1072,6 +1152,11 @@ const STRINGS = {
     zoom_helper: "A mini kártyát a teljes listára váltja és vissza",
     language: "Nyelv",
     lang_auto: "Automatikus (a Home Assistant nyelve)",
+    illustration: "Illusztráció",
+    illustration_theme: "Illusztráció témája",
+    theme_auto: "Automatikus (nap)",
+    theme_day: "Nappal",
+    theme_night: "Éjszaka",
   },
   sk: {
     title: "Služby",
@@ -1132,6 +1217,11 @@ const STRINGS = {
     zoom_helper: "Prepína mini kartu na celý zoznam a späť",
     language: "Jazyk",
     lang_auto: "Automaticky (jazyk Home Assistant)",
+    illustration: "Ilustrácia",
+    illustration_theme: "Téma ilustrácie",
+    theme_auto: "Automaticky (slnko)",
+    theme_day: "Deň",
+    theme_night: "Noc",
   },
   cs: {
     title: "Služby",
@@ -1192,6 +1282,11 @@ const STRINGS = {
     zoom_helper: "Přepíná mini kartu na celý seznam a zpět",
     language: "Jazyk",
     lang_auto: "Automaticky (jazyk Home Assistant)",
+    illustration: "Ilustrace",
+    illustration_theme: "Motiv ilustrace",
+    theme_auto: "Automaticky (slunce)",
+    theme_day: "Den",
+    theme_night: "Noc",
   },
   sl: {
     title: "Storitve",
@@ -1252,6 +1347,11 @@ const STRINGS = {
     zoom_helper: "Preklopi mini kartico na celoten seznam in nazaj",
     language: "Jezik",
     lang_auto: "Samodejno (jezik Home Assistanta)",
+    illustration: "Ilustracija",
+    illustration_theme: "Tema ilustracije",
+    theme_auto: "Samodejno (sonce)",
+    theme_day: "Dan",
+    theme_night: "Noč",
   },
   lv: {
     title: "Pakalpojumi",
@@ -1312,6 +1412,11 @@ const STRINGS = {
     zoom_helper: "Pārslēdz mini kartīti uz pilno sarakstu un atpakaļ",
     language: "Valoda",
     lang_auto: "Automātiski (Home Assistant valoda)",
+    illustration: "Ilustrācija",
+    illustration_theme: "Ilustrācijas tēma",
+    theme_auto: "Automātiski (saule)",
+    theme_day: "Diena",
+    theme_night: "Nakts",
   },
   el: {
     title: "Υπηρεσίες",
@@ -1372,6 +1477,11 @@ const STRINGS = {
     zoom_helper: "Εναλλάσσει τη μίνι κάρτα στην πλήρη λίστα και πίσω",
     language: "Γλώσσα",
     lang_auto: "Αυτόματη (γλώσσα του Home Assistant)",
+    illustration: "Εικονογράφηση",
+    illustration_theme: "Θέμα εικονογράφησης",
+    theme_auto: "Αυτόματο (ήλιος)",
+    theme_day: "Ημέρα",
+    theme_night: "Νύχτα",
   },
 };
 
@@ -1540,6 +1650,80 @@ const rackSvg = (status = "up") => {
 };
 
 const svgUri = (svg) => `data:image/svg+xml,${encodeURIComponent(svg)}`;
+
+// ---------------------------------------------------------------------------
+// Illustrated header ("banner"): the rack in a server room
+// ---------------------------------------------------------------------------
+
+// The server room, a 200 × 80 picture drawn at the banner's right over a 10 px concrete floor strip: a cable tray
+// along the ceiling, a network cable running down into a small switch whose lights follow the overall status. The
+// rack (rackSvg, with its own animations) stands on the strip at the right. `uid` keeps the ids of each card apart.
+const sceneSvg = (status, night, uid) => {
+  const cls = STATUS_CLASS[status] || "idle";
+  const led = cls === "ok" ? "#43c463" : STATE_COLORS[cls];
+  const live = status !== "down" && status !== "unknown";
+  const wall = night ? ["#232a36", "#2e3746", "#3a4456", "#2e3746", "#455066"] : ["#e7eaee", "#d6dbe1", "#c4cbd3", "#ffffff", "#c4cbd3"];
+  const lines = [20, 40, 60].map((y) => `<line x1="0" y1="${y}" x2="200" y2="${y}"/>`).join("");
+  return `<svg class="scene" viewBox="0 0 200 80" preserveAspectRatio="xMaxYMax meet" aria-hidden="true" focusable="false">
+    <defs><linearGradient id="uc-cable-${uid}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${live ? "#2f80ed" : wall[4]}"/><stop offset="1" stop-color="${live ? "#5c9df2" : wall[4]}"/></linearGradient></defs>
+    <rect width="200" height="80" fill="${wall[0]}"/><g stroke="${wall[1]}" stroke-width=".8">${lines}</g>
+    <path d="M0 8 H200" stroke="${wall[2]}" stroke-width="3"/>
+    <path class="${live ? "uc-flow" : ""}" d="M10 8 V40" stroke="url(#uc-cable-${uid})" stroke-width="1.6" fill="none"${live ? "" : ' stroke-dasharray="3 4"'}/>
+    <rect x="18" y="20" width="22" height="16" rx="2" fill="${wall[3]}" stroke="${wall[4]}"/>
+    <circle class="${status === "down" || status === "pending" ? "uc-alarm" : live ? "uc-blink" : ""}" cx="24" cy="28" r="1.4" fill="${led}"/>
+    <circle class="${live ? "uc-blink" : ""}" cx="29" cy="28" r="1.4" fill="${status === "down" ? "#43c463" : led}" style="animation-delay:.4s"/>
+    <circle class="${live ? "uc-blink" : ""}" cx="34" cy="28" r="1.4" fill="${led}" style="animation-delay:.8s" opacity=".7"/></svg>`;
+};
+
+// Night picture: forced by illustration_theme, else the sun below the horizon, else Home Assistant's dark mode.
+const isNight = (hass, config) => {
+  const theme = config?.illustration_theme;
+  if (theme === "night") return true;
+  if (theme === "day") return false;
+  const sun = hass?.states?.["sun.sun"];
+  if (sun && sun.state !== "unavailable" && sun.state !== "unknown") return sun.state === "below_horizon";
+  return !!hass?.themes?.darkMode;
+};
+
+// The header icon's colour on the banner follows the overall status: all up in green, pending or a warning in amber,
+// a service down in red, maintenance in blue, nothing known in neutral grey.
+const BANNER_STYLE = `
+  .banner { position: relative; height: 90px; overflow: hidden; flex: none; --sky-text: #0d2a45; --sky-muted: #3b5b78;
+            color: var(--sky-text); background: #e7eaee; }
+  .banner.night { --sky-text: #fff; --sky-muted: rgba(255,255,255,.78); background: #232a36; }
+  .banner .scene { position: absolute; right: 0; bottom: 10px; height: 80px; width: min(200px, 62%);
+                   -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 14%); mask-image: linear-gradient(90deg, transparent 0, #000 14%); }
+  /* The floor: a 10 px concrete strip, edge to edge. */
+  .banner .ground { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: #9aa1a9; box-shadow: inset 0 2px 0 #b5bbc2; }
+  .banner.night .ground { background: #2c323b; box-shadow: inset 0 2px 0 #3a4250; }
+  .banner .htext { position: absolute; z-index: 1; left: 0; top: 0; bottom: 10px; right: min(200px, 62%); box-sizing: border-box;
+                   display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 14px; min-width: 0; }
+  .banner .titles { min-height: 0; }
+  .banner .name { color: var(--sky-text); }
+  .banner .sub { font-size: 13px; color: var(--sky-muted); }
+  .banner .type-icon { background: rgba(255,255,255,.62); box-shadow: inset 0 0 0 1px color-mix(in srgb, var(--uc-tint) 22%, transparent); }
+  .banner .type-icon .icon, .banner .type-icon:is(.ok, .warn, .crit, .idle, .maint) .icon { fill: var(--uc-tint); }
+  .banner.night .type-icon { background: rgba(255,255,255,.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,.14); }
+  .banner.night .type-icon .icon, .banner.night .type-icon:is(.ok, .warn, .crit, .idle, .maint) .icon { fill: color-mix(in srgb, var(--uc-tint) 72%, #fff); }
+  /* The rack stands on the strip (its feet on the concrete). */
+  .banner .bart { position: absolute; right: 10px; bottom: 7px; height: 62px; }
+  .banner.has-zoom .bart { right: 38px; }
+  .banner .bart .picture { width: auto; height: 62px; aspect-ratio: 120 / 140; }
+  .banner .bart .picture img { width: 100%; height: 100%; max-height: none; filter: drop-shadow(0 2px 3px rgba(0,0,0,.2)); }
+  .banner .zoom { position: absolute; z-index: 2; top: 6px; right: 6px; margin: 0; color: #10283f; background: rgba(255,255,255,.55); }
+  .banner.night .zoom { color: #fff; background: rgba(10,20,40,.45); }
+  .uc-flow { stroke-dasharray: 3 4; animation: uc-flow 1s linear infinite; }
+  .uc-blink { animation: uc-blink 1.2s steps(2, jump-none) infinite; }
+  .uc-alarm { animation: uc-breathe .8s ease-in-out infinite; }
+  @keyframes uc-flow { to { stroke-dashoffset: -14; } }
+  @keyframes uc-blink { 50% { opacity: .2; } }
+  /* Narrow card: no room for the room beside the text, the rack stays. */
+  @container (max-width: 300px) { .banner .scene { display: none; } .banner .htext { right: 66px; } .banner.has-zoom .htext { right: 94px; } }
+  /* Narrowest mini card: the rack gives way too (see MINI_STYLE), the text runs up to the detail button. */
+  @container (max-width: 200px) { .banner .htext, .banner.has-zoom .htext { right: 40px; } }
+  .banner + .content { padding-top: 12px; }
+`;
+let _uid = 0;
 
 // ---------------------------------------------------------------------------
 // Discovery: services from the registries
@@ -1977,6 +2161,7 @@ class UptimeBase extends HTMLElement {
     this.attachShadow({ mode: "open" });
     this._html = "";
     this._rev = 0;
+    this._uid = ++_uid;
     this.shadowRoot.addEventListener("click", (ev) => this._onClick(ev));
     // No rewrite of the card between the press and the release: Home Assistant updates the card several times a
     // second, and a rewrite under the pointer replaces the element pressed, so that the click lands on the card itself
@@ -2028,7 +2213,7 @@ class UptimeBase extends HTMLElement {
     const h = this._hass;
     if (!h?.entities || !this._config) return null;
     const ids = this._services().flatMap((s) => [s.status, s.latency, s.cert, s.uptime, s.url, s.hostname, s.type, s.tags_entity]);
-    return [h.entities, h.devices, h.language, h.locale, h.themes?.darkMode, this._rev, this._minute, ...ids.map((id) => (id ? h.states[id] : undefined))];
+    return [h.entities, h.devices, h.language, h.locale, h.themes?.darkMode, this._illustrated() ? h.states["sun.sun"] : undefined, this._rev, this._minute, ...ids.map((id) => (id ? h.states[id] : undefined))];
   }
 
   connectedCallback() {
@@ -2399,6 +2584,32 @@ class UptimeBase extends HTMLElement {
     return this._t("ssl_in", { d: fmtUnit(cert.days, "day", this._locale()) });
   }
 
+  _illustrated() {
+    return this._config?.illustration !== false;
+  }
+
+  // The illustrated header: the rack of the overall status in its server room, the title and the status on the wall
+  // at its left, the round icon in the status colour. Its subtitle is the status in words and the share of services up.
+  _banner(sum, overall, views) {
+    const c = this._config;
+    const zoom = this._zoomButton();
+    const night = isNight(this._hass, c);
+    const sub = [sum.chip?.text, this._t("summary", { up: sum.up.toLocaleString(this._locale()), total: sum.total.toLocaleString(this._locale()) })].filter(Boolean).join(" · ");
+    return `
+      <div class="banner${night ? " night" : ""}${zoom ? " has-zoom" : ""}">
+        ${sceneSvg(overall, night, this._uid)}<div class="ground"></div>
+        <div class="htext">
+          <span class="type-icon${sum.icon ? ` ${sum.icon}` : ""}">${svgIcon(ICONS.heart_pulse)}</span>
+          <div class="titles">
+            <div class="name">${esc(c.title || this._t("title"))}</div>
+            <div class="sub">${esc(sub)}</div>
+          </div>
+        </div>
+        <div class="bart">${this._pictureBlock(overall, views)}</div>
+        ${zoom}
+      </div>`;
+  }
+
   _header(sum, sub) {
     const c = this._config;
     const chip = sum.chip;
@@ -2574,7 +2785,7 @@ class UptimeCard extends UptimeBase {
     );
     const overall = this._overall(sum);
     return `<div class="hero">
-        ${this._pictureBlock(overall, all)}
+        ${this._illustrated() ? "" : this._pictureBlock(overall, all)}
         <div class="info">
           <div class="state ${sum.chip?.cls || ""}">${esc(sum.chip?.text || "")}</div>
           <div class="ratio-line">${this._ratio(sum)}<span class="v">${esc(this._t("summary", { up: sum.up.toLocaleString(locale), total: sum.total.toLocaleString(locale) }))}</span></div>
@@ -2596,9 +2807,10 @@ class UptimeCard extends UptimeBase {
     if (!views.length) body = `<div class="empty-line">${svgIcon(ICONS.check_circle)}<span>${esc(this._t("all_operational"))}</span></div>`;
     else body = groups ? groups.map((g) => this._group(g)).join("") : this._list(views);
     const hero = this._config.show_hero === false ? "" : this._hero(all, sum);
-    return `<style>${BASE_STYLE}${FULL_STYLE}</style>
+    const ill = this._illustrated();
+    return `<style>${BASE_STYLE}${FULL_STYLE}${ill ? BANNER_STYLE : ""}</style>
       <ha-card>
-        ${this._header(sum, this._t("summary", { up: sum.up, total: sum.total }))}
+        ${ill ? this._banner(sum, this._overall(sum), all) : this._header(sum, this._t("summary", { up: sum.up, total: sum.total }))}
         <div class="content">${hero}${body}</div>
       </ha-card>`;
   }
@@ -2678,11 +2890,12 @@ class UptimeMiniCard extends UptimeCard {
       : !down.length
         ? `<div class="ok-line">${svgIcon(ICONS.check_circle)}<span>${esc(sum.up === sum.total ? this._t("all_operational") : sum.chip?.text || "")}</span></div>`
         : "";
-    return `<style>${BASE_STYLE}${MINI_STYLE}</style>
+    const ill = this._illustrated();
+    return `<style>${BASE_STYLE}${MINI_STYLE}${ill ? BANNER_STYLE : ""}</style>
       <ha-card>
-        ${this._header(sum, "")}
+        ${ill ? this._banner(sum, this._overall(sum), views) : this._header(sum, "")}
         <div class="content">
-          ${this._pictureBlock(this._overall(sum), views)}
+          ${ill ? "" : this._pictureBlock(this._overall(sum), views)}
           <div class="info">
             <div class="total"><span class="big">${sum.up.toLocaleString(locale)}</span><span class="of">/${sum.total.toLocaleString(locale)}</span><span class="lbl">${esc(this._t("services_up"))}</span></div>
             ${this._ratio(sum)}
@@ -2726,6 +2939,7 @@ class UptimeEditorBase extends HTMLElement {
   // [name, default]
   static get toggles() {
     return [
+      ["illustration", true],
       ["show_title", true],
       ["show_subtitle", true],
       ["show_hero", true],
@@ -2775,6 +2989,7 @@ class UptimeEditorBase extends HTMLElement {
           selector: { number: { min: nums[name][0], max: nums[name][1], mode: "box", ...(nums[name][2] ? { unit_of_measurement: nums[name][2] } : {}) } },
         })),
       },
+      { name: "illustration_theme", selector: { select: { mode: "dropdown", options: ["auto", "day", "night"].map((v) => ({ value: v, label: tr(`theme_${v}`) })) } } },
       {
         name: "language",
         selector: { select: { mode: "dropdown", options: [{ value: "", label: tr("lang_auto") }, ...LANGUAGES.map(([value, label]) => ({ value, label }))] } },
@@ -2806,7 +3021,7 @@ class UptimeEditorBase extends HTMLElement {
   }
 
   _defaults() {
-    return { ...Object.fromEntries(this.constructor.toggles), group_by: "tag", sort: "status", ...Object.fromEntries(this.constructor.numbers.map((n) => [n, DEFAULTS[n]])) };
+    return { ...Object.fromEntries(this.constructor.toggles), group_by: "tag", sort: "status", illustration_theme: "auto", ...Object.fromEntries(this.constructor.numbers.map((n) => [n, DEFAULTS[n]])) };
   }
 
   _render() {

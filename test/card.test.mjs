@@ -64,9 +64,12 @@ test("the full card: header summary and chip, problems first, latency, certifica
   const card = newCard({ group_by: "none" }, makeHass(states, { callWS }));
   await flush();
   const h = html(card);
-  assert.match(h, /<div class="sub">9\/11 up<\/div>/);
-  assert.match(h, /class="chip crit" title="1 down"/);
+  assert.match(h, /<div class="sub">1 down · 9\/11 up<\/div>/);
   assert.match(h, /class="type-icon crit"/);
+  const classic = html(newCard({ group_by: "none", illustration: false }));
+  assert.match(classic, /<div class="sub">9\/11 up<\/div>/);
+  assert.match(classic, /class="chip crit" title="1 down"/);
+  assert.doesNotMatch(classic, /class="banner/);
   assert.equal(rows(card)[0], "sensor.media_status", "the service down comes first");
   assert.equal(rows(card)[1], "sensor.photos_status", "then maintenance");
   assert.match(h, /Down for 14 min/);
@@ -90,6 +93,26 @@ test("the hero: picture of the overall state, alerts of the service down and of 
   assert.match(h, /<span>Uptime Kuma<\/span><b>7<\/b>/);
   assert.match(h, /<img src="data:image\/svg\+xml,/);
   assert.doesNotMatch(html(newCard({ show_hero: false })), /class="hero"/);
+});
+
+test("the illustrated header: rack in its server room, status icon, night mode, unique ids, classic fallback", () => {
+  const h = html(newCard({}, makeHass()));
+  assert.match(h, /<div class="banner">/);
+  assert.match(h, /class="ground"/);
+  assert.match(h, /<div class="bart"><div class="picture clickable"/);
+  assert.doesNotMatch(h.slice(h.indexOf('class="hero"')), /class="picture/, "the rack is in the banner, not in the hero");
+  assert.match(html(newCard({ show_ssl: false, show_latency: false }, makeHass(withOverrides(allUp)))), /type-icon ok/);
+  assert.match(html(newCard({}, makeHass(states, { themes: { darkMode: true } }))), /class="banner night"/);
+  const sun = { "sun.sun": { entity_id: "sun.sun", state: "below_horizon", attributes: {} } };
+  assert.match(html(newCard({}, makeHass({ ...states, ...sun }))), /class="banner night"/);
+  assert.match(html(newCard({ illustration_theme: "day" }, makeHass({ ...states, ...sun }))), /class="banner"/);
+  assert.match(html(newCard({ illustration_theme: "night" })), /class="banner night"/);
+  const ids = [newCard(), newCard()].map((c) => html(c).match(/id="(uc-cable-\d+)"/)[1]);
+  assert.notEqual(ids[0], ids[1]);
+  const mini = html(newCard({}, makeHass(), uc.UptimeMiniCard));
+  assert.match(mini, /<div class="banner has-zoom">/);
+  assert.match(mini, /<div class="sub">1 down · 9\/11 up<\/div>/);
+  assert.match(html(newCard({ illustration: false }, makeHass(), uc.UptimeMiniCard)), /<div class="content">\s*<div class="picture/);
 });
 
 test("the picture follows the overall state, each with its own animation", () => {
