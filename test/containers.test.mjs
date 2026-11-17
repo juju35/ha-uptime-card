@@ -95,4 +95,64 @@ for (const type of ["uptime-card", "uptime-mini-card"]) {
   });
 }
 
+// The status pill of the illustrated header: its whole label on the title row (or on its own line under the subtitle
+// when the row runs out of room), never more than about half the title block, the title kept readable; the mini
+// card's detail button in the banner's top-right corner.
+for (const type of ["uptime-card", "uptime-mini-card"]) {
+  test(`${type}: the status pill shows its whole label, the title stays readable`, { skip: !browser && "no Chromium" }, async () => {
+    const page = await browser.newPage({ viewport: { width: 1000, height: 800 } });
+    try {
+      await page.setContent('<!doctype html><body style="margin:0;font-family:Arial,sans-serif"></body>');
+      await page.addScriptTag({ content: HA_CARD });
+      await page.addScriptTag({ content: source });
+      const results = await page.evaluate(
+        async ({ type, states, entities, devices }) => {
+          const hass = { states, entities, devices, language: "en", locale: { language: "en" }, themes: {}, callService() {} };
+          const cards = [245, 300, 400, 500].map((w) => {
+            const outer = document.body.appendChild(document.createElement("div"));
+            outer.style.width = `${w}px`;
+            const card = outer.appendChild(document.createElement(type));
+            card.setConfig({ type: `custom:${type}` });
+            card.hass = hass;
+            return [w, card];
+          });
+          await new Promise((r) => requestAnimationFrame(() => requestAnimationFrame(r)));
+          return cards.map(([w, card]) => {
+            const q = (s) => card.shadowRoot.querySelector(s);
+            const box = (e) => e?.getBoundingClientRect();
+            const chip = q(".banner .chip");
+            const text = chip.querySelector(".chip-text");
+            const name = q(".banner .name");
+            const titles = box(q(".banner .titles"));
+            const banner = box(q(".banner"));
+            const zoom = box(q(".banner .zoom"));
+            return {
+              w,
+              whole: text.scrollWidth <= text.clientWidth + 1,
+              share: box(chip).width / titles.width,
+              // On the title row (vertically centred on the title), or on its own line under the subtitle.
+              inline: Math.abs(box(chip).top + box(chip).height / 2 - (box(name).top + box(name).height / 2)) <= 2,
+              below: box(chip).top >= box(name).bottom,
+              inside: box(chip).right <= titles.right + 1,
+              name: name.scrollWidth <= name.clientWidth + 1 || name.clientWidth >= 40,
+              zoom: zoom && { top: Math.round(zoom.top - banner.top), right: Math.round(banner.right - zoom.right), w: Math.round(zoom.width) },
+            };
+          });
+        },
+        { type, states, entities, devices },
+      );
+      for (const r of results) {
+        assert.ok(r.whole, `${r.w} px: the pill's label is cut`);
+        assert.ok(r.inline || r.below, `${r.w} px: the pill is neither on the title row nor under the subtitle`);
+        if (r.inline) assert.ok(r.share <= 0.52, `${r.w} px: the pill takes ${Math.round(r.share * 100)} % of the title block`);
+        assert.ok(r.inside, `${r.w} px: the pill runs out of the title block`);
+        assert.ok(r.name, `${r.w} px: the title is cut to nothing`);
+        if (type === "uptime-mini-card") assert.deepEqual(r.zoom, { top: 5, right: 5, w: 24 }, `${r.w} px: the detail button is out of its corner`);
+      }
+    } finally {
+      await page.close();
+    }
+  });
+}
+
 test.after(() => browser?.close());

@@ -1696,7 +1696,7 @@ const BANNER_STYLE = `
   /* The floor: a 10 px concrete strip, edge to edge. */
   .banner .ground { position: absolute; left: 0; right: 0; bottom: 0; height: 10px; background: #9aa1a9; box-shadow: inset 0 2px 0 #b5bbc2; }
   .banner.night .ground { background: #2c323b; box-shadow: inset 0 2px 0 #3a4250; }
-  .banner .htext { position: absolute; z-index: 1; left: 0; top: 0; bottom: 10px; right: min(200px, 62%); box-sizing: border-box;
+  .banner .htext { position: absolute; z-index: 1; left: 0; top: 0; bottom: 10px; right: calc(min(200px, 62%) - 70px); box-sizing: border-box;
                    display: flex; align-items: center; gap: 10px; padding: 8px 8px 8px 14px; min-width: 0; }
   .banner .titles { min-height: 0; }
   .banner .name { color: var(--sky-text); }
@@ -1710,17 +1710,45 @@ const BANNER_STYLE = `
   .banner.has-zoom .bart { right: 38px; }
   .banner .bart .picture { width: auto; height: 62px; aspect-ratio: 120 / 140; }
   .banner .bart .picture img { width: 100%; height: 100%; max-height: none; filter: drop-shadow(0 2px 3px rgba(0,0,0,.2)); }
-  .banner .zoom { position: absolute; z-index: 2; top: 6px; right: 6px; margin: 0; color: #10283f; background: rgba(255,255,255,.55); }
-  .banner.night .zoom { color: #fff; background: rgba(10,20,40,.45); }
+  /* The mini card's detail button: a frosted round button in the banner's top-right corner. */
+  .banner .zoom { all: unset; position: absolute; z-index: 2; top: 5px; right: 5px; margin: 0; cursor: pointer; width: 24px; height: 24px;
+                  border-radius: 50%; display: grid; place-items: center; box-sizing: border-box; color: #33506b; background: rgba(255,255,255,.55);
+                  box-shadow: inset 0 0 0 1px rgba(255,255,255,.7); -webkit-backdrop-filter: blur(4px); backdrop-filter: blur(4px); }
+  .banner .zoom .icon { width: 16px; height: 16px; }
+  .banner .zoom:hover { background: rgba(255,255,255,.75); color: #33506b; }
+  .banner.night .zoom { color: #ffffff; background: rgba(255,255,255,.12); box-shadow: inset 0 0 0 1px rgba(255,255,255,.2); }
+  .banner.night .zoom:hover { background: rgba(255,255,255,.22); color: #ffffff; }
+  .banner .zoom:focus-visible { outline: 2px solid var(--primary-color, #03a9f4); outline-offset: 2px; }
+  /* The title row: the title gives way first (down to 4 characters), the status pill keeps its whole label. The titles
+     are their own container: when the row runs out of room, the pill drops under the subtitle. */
+  .banner .htext .titles { container: ut-titles / inline-size; flex: 1 1 0; min-width: 0; align-self: stretch; display: flex; flex-direction: column; justify-content: center; }
+  .tstack { display: flex; flex-direction: column; gap: 1px; align-items: flex-start; min-width: 0; width: 100%; }
+  .tstack > * { max-width: 100%; }
+  .trow { display: flex; align-items: center; gap: 8px; min-width: 0; width: 100%; }
+  .trow .name { flex: 0 1 auto; min-width: 4ch; }
+  /* The status pill on the banner: the status colour on frosted glass. */
+  .banner .chip { display: inline-flex; align-items: center; gap: 4px; flex: 0 0 auto; margin: 0; max-width: 51%; padding: 1px 8px; border-radius: 12px;
+                  font-size: 11px; font-weight: 500; line-height: 16px; white-space: nowrap; overflow: hidden; box-sizing: border-box;
+                  background: color-mix(in srgb, var(--c, var(--uc-accent)) 18%, rgba(255,255,255,.78)); color: color-mix(in srgb, var(--c, var(--uc-accent)) 45%, #0d2a45); }
+  .banner.night .chip { background: color-mix(in srgb, var(--c, var(--uc-accent)) 30%, rgba(8,18,38,.55)); color: color-mix(in srgb, var(--c, var(--uc-accent)) 35%, #ffffff); }
+  .banner .chip .dot { width: 7px; height: 7px; border-radius: 50%; flex: none; background: var(--c, var(--uc-accent)); }
+  .banner .chip .chip-text { display: inline; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  @container ut-titles (max-width: 180px) {
+    .tstack { display: grid; justify-items: start; row-gap: 1px; }
+    .trow { display: contents; }
+    .trow .name { max-width: 100%; }
+    .banner .chip { order: 3; max-width: 100%; }
+  }
+  @container ut-card (max-width: 200px) { .banner .chip { padding: 4px; } .banner .chip .chip-text { display: none; } }
   .uc-flow { stroke-dasharray: 3 4; animation: uc-flow 1s linear infinite; }
   .uc-blink { animation: uc-blink 1.2s steps(2, jump-none) infinite; }
   .uc-alarm { animation: uc-breathe .8s ease-in-out infinite; }
   @keyframes uc-flow { to { stroke-dashoffset: -14; } }
   @keyframes uc-blink { 50% { opacity: .2; } }
   /* Narrow card: no room for the room beside the text, the rack stays. */
-  @container (max-width: 300px) { .banner .scene { display: none; } .banner .htext { right: 66px; } .banner.has-zoom .htext { right: 94px; } }
+  @container ut-card (max-width: 300px) { .banner .scene { display: none; } .banner .htext { right: 66px; } .banner.has-zoom .htext { right: 94px; } }
   /* Narrowest mini card: the rack gives way too (see MINI_STYLE), the text runs up to the detail button. */
-  @container (max-width: 200px) { .banner .htext, .banner.has-zoom .htext { right: 40px; } }
+  @container ut-card (max-width: 200px) { .banner .htext, .banner.has-zoom .htext { right: 40px; } }
   .banner + .content { padding-top: 12px; }
 `;
 let _uid = 0;
@@ -1943,7 +1971,7 @@ const BASE_STYLE = `
              bars and icons keep the plain color. */
           --uc-accent-text: color-mix(in srgb, var(--uc-accent) 50%, var(--primary-text-color)); }
   :host([dark]) { --uc-accent: ${ACCENT[1]}; }
-  ha-card { overflow: hidden; container-type: inline-size; }
+  ha-card { overflow: hidden; container: ut-card / inline-size; }
   /* A size container has no width of its own content: this empty, zero-height grid gives the card a natural width
      without any minimum, so that it neither falls to its borders in a parent sized by its content nor overflows a
      narrow grid track. */
@@ -1990,7 +2018,7 @@ const BASE_STYLE = `
   .zoom .icon { width: 16px; height: 16px; }
   .zoom:hover { background: color-mix(in srgb, var(--uc-idle) 16%, transparent); color: var(--primary-text-color); }
   .zoom:focus-visible { outline: 2px solid var(--primary-color, var(--uc-accent)); outline-offset: 1px; }
-  @container (max-width: 230px) {
+  @container ut-card (max-width: 230px) {
     .chip { padding: 4px; flex: none; }
     .chip-text { display: none; }
     .header { gap: 6px; }
@@ -2059,14 +2087,14 @@ const FULL_STYLE = `
   .empty-line { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--secondary-text-color); padding: 4px 0; }
   .empty-line .icon { color: var(--uc-ok); width: 16px; height: 16px; }
   /* Narrow card: the uptime percentage gives way first, then the bar takes a thinner slice gap. */
-  @container (max-width: 300px) {
+  @container ut-card (max-width: 300px) {
     .picture { width: 64px; height: 74px; }
     .hero { gap: 10px; }
     .meta .pct { display: none; }
     .hbar { gap: 1px; }
   }
   /* Narrowest full card: the picture goes above the overview instead of beside it. */
-  @container (max-width: 260px) {
+  @container ut-card (max-width: 260px) {
     .hero { flex-direction: column; align-items: stretch; gap: 8px; }
     .hero .picture { align-self: center; }
     .svc { padding: 8px; column-gap: 8px; }
@@ -2092,7 +2120,7 @@ const MINI_STYLE = `
   .more { font-size: 12px; color: var(--secondary-text-color); padding: 0 8px; }
   .ok-line { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--secondary-text-color); }
   .ok-line .icon { width: 16px; height: 16px; color: var(--uc-ok); }
-  @container (max-width: 200px) {
+  @container ut-card (max-width: 200px) {
     .picture { display: none; }
     .item .since { display: none; }
   }
@@ -2594,16 +2622,22 @@ class UptimeBase extends HTMLElement {
     const c = this._config;
     const zoom = this._zoomButton();
     const night = isNight(this._hass, c);
-    const sub = [sum.chip?.text, this._t("summary", { up: sum.up.toLocaleString(this._locale()), total: sum.total.toLocaleString(this._locale()) })].filter(Boolean).join(" · ");
+    // The status in the pill on the title row (in the round icon's colour, a certificate or a slow service included),
+    // the share of services up in the subtitle.
+    const sub = this._t("summary", { up: sum.up.toLocaleString(this._locale()), total: sum.total.toLocaleString(this._locale()) });
+    const chip = sum.chip;
+    const pill = chip
+      ? `<span class="chip ${sum.icon || chip.cls}" title="${esc(chip.text)}" aria-label="${esc(chip.text)}"><span class="dot"></span><span class="chip-text">${esc(chip.text)}</span></span>`
+      : "";
     return `
       <div class="banner${night ? " night" : ""}${zoom ? " has-zoom" : ""}">
         ${sceneSvg(overall, night, this._uid)}<div class="ground"></div>
         <div class="htext">
           <span class="type-icon${sum.icon ? ` ${sum.icon}` : ""}">${svgIcon(ICONS.heart_pulse)}</span>
-          <div class="titles">
-            <div class="name">${esc(c.title || this._t("title"))}</div>
+          <div class="titles"><div class="tstack">
+            <div class="trow"><div class="name">${esc(c.title || this._t("title"))}</div>${pill}</div>
             <div class="sub">${esc(sub)}</div>
-          </div>
+          </div></div>
         </div>
         <div class="bart">${this._pictureBlock(overall, views)}</div>
         ${zoom}

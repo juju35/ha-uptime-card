@@ -64,7 +64,9 @@ test("the full card: header summary and chip, problems first, latency, certifica
   const card = newCard({ group_by: "none" }, makeHass(states, { callWS }));
   await flush();
   const h = html(card);
-  assert.match(h, /<div class="sub">1 down · 9\/11 up<\/div>/);
+  // The status in the pill on the title row, the share of services up in the subtitle.
+  assert.match(h, /class="trow"><div class="name">Services<\/div><span class="chip crit"[^>]*><span class="dot"><\/span><span class="chip-text">1 down</);
+  assert.match(h, /<div class="sub">9\/11 up<\/div>/);
   assert.match(h, /class="type-icon crit"/);
   const classic = html(newCard({ group_by: "none", illustration: false }));
   assert.match(classic, /<div class="sub">9\/11 up<\/div>/);
@@ -111,7 +113,7 @@ test("the illustrated header: rack in its server room, status icon, night mode, 
   assert.notEqual(ids[0], ids[1]);
   const mini = html(newCard({}, makeHass(), uc.UptimeMiniCard));
   assert.match(mini, /<div class="banner has-zoom">/);
-  assert.match(mini, /<div class="sub">1 down · 9\/11 up<\/div>/);
+  assert.match(mini, /chip-text">1 down<[\s\S]*<div class="sub">9\/11 up<\/div>/);
   assert.match(html(newCard({ illustration: false }, makeHass(), uc.UptimeMiniCard)), /<div class="content">\s*<div class="picture/);
 });
 

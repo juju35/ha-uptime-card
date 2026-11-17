@@ -5,6 +5,7 @@
 ### Features
 - **Illustrated header** on the full and the mini card (90 px): the rack of the overall status, with its existing animations (heartbeat, alarm rings, pending dots, swinging wrench), stands in a server room on a 10 px concrete floor strip; the room's switch lights and network cable follow the status too. The title and the status (`1 down · 9/11 up`) sit on the left, next to the round heart-pulse icon in the status colour (green all up, amber pending or warning, red down, blue maintenance, grey unknown).
 - Night picture after sunset (`sun.sun`, else Home Assistant's dark mode), forced with `illustration_theme: day | night`; `illustration: false` keeps the classic header with the rack in the overview. Both options are in the visual editors (the mini card's included), with their labels in the 22 languages.
+- The status pill is back in the illustrated header, on the title row right after the title, in the round icon's colour; the subtitle keeps the share of services up. It drops under the subtitle when room runs short and keeps only its dot on a very narrow card. The mini card's detail button sits in the banner's top-right corner, in the frosted style of the other cards.
 
 ## 1.0.2 - 2026-11-14
 
