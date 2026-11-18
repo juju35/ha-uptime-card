@@ -114,7 +114,7 @@ const STRINGS = {
     lang_auto: "Automatic (Home Assistant language)",
     illustration: "Illustration",
     illustration_theme: "Illustration theme",
-    theme_auto: "Automatic (sun or dark theme)",
+    theme_auto: "Automatic (follows the theme)",
     theme_day: "Day",
     theme_night: "Night",
   },
@@ -179,7 +179,7 @@ const STRINGS = {
     lang_auto: "Automatique (langue de Home Assistant)",
     illustration: "Illustration",
     illustration_theme: "Thème de l'illustration",
-    theme_auto: "Automatique (soleil ou thème sombre)",
+    theme_auto: "Automatique (suit le thème)",
     theme_day: "Jour",
     theme_night: "Nuit",
   },
@@ -244,7 +244,7 @@ const STRINGS = {
     lang_auto: "Automatisch (Sprache von Home Assistant)",
     illustration: "Illustration",
     illustration_theme: "Illustrationsthema",
-    theme_auto: "Automatisch (Sonne oder dunkles Design)",
+    theme_auto: "Automatisch (folgt dem Thema)",
     theme_day: "Tag",
     theme_night: "Nacht",
   },
@@ -309,7 +309,7 @@ const STRINGS = {
     lang_auto: "Automático (idioma de Home Assistant)",
     illustration: "Ilustración",
     illustration_theme: "Tema de la ilustración",
-    theme_auto: "Automático (sol o tema oscuro)",
+    theme_auto: "Automático (sigue el tema)",
     theme_day: "Día",
     theme_night: "Noche",
   },
@@ -374,7 +374,7 @@ const STRINGS = {
     lang_auto: "Automatica (lingua di Home Assistant)",
     illustration: "Illustrazione",
     illustration_theme: "Tema dell'illustrazione",
-    theme_auto: "Automatico (sole o tema scuro)",
+    theme_auto: "Automatico (segue il tema)",
     theme_day: "Giorno",
     theme_night: "Notte",
   },
@@ -439,7 +439,7 @@ const STRINGS = {
     lang_auto: "Automatisch (taal van Home Assistant)",
     illustration: "Illustratie",
     illustration_theme: "Thema van de illustratie",
-    theme_auto: "Automatisch (zon of donker thema)",
+    theme_auto: "Automatisch (volgt het thema)",
     theme_day: "Dag",
     theme_night: "Nacht",
   },
@@ -504,7 +504,7 @@ const STRINGS = {
     lang_auto: "Automático (idioma do Home Assistant)",
     illustration: "Ilustração",
     illustration_theme: "Tema da ilustração",
-    theme_auto: "Automático (sol ou tema escuro)",
+    theme_auto: "Automático (segue o tema)",
     theme_day: "Dia",
     theme_night: "Noite",
   },
@@ -569,7 +569,7 @@ const STRINGS = {
     lang_auto: "Automatyczny (język Home Assistant)",
     illustration: "Ilustracja",
     illustration_theme: "Motyw ilustracji",
-    theme_auto: "Automatyczny (słońce lub ciemny motyw)",
+    theme_auto: "Automatycznie (według motywu)",
     theme_day: "Dzień",
     theme_night: "Noc",
   },
@@ -634,7 +634,7 @@ const STRINGS = {
     lang_auto: "Аутоматски (језик Home Assistant-а)",
     illustration: "Илустрација",
     illustration_theme: "Тема илустрације",
-    theme_auto: "Аутоматски (сунце или тамна тема)",
+    theme_auto: "Аутоматски (прати тему)",
     theme_day: "Дан",
     theme_night: "Ноћ",
   },
@@ -699,7 +699,7 @@ const STRINGS = {
     lang_auto: "Automatski (jezik Home Assistant-a)",
     illustration: "Ilustracija",
     illustration_theme: "Tema ilustracije",
-    theme_auto: "Automatski (sunce ili tamna tema)",
+    theme_auto: "Automatski (prati temu)",
     theme_day: "Dan",
     theme_night: "Noć",
   },
@@ -764,7 +764,7 @@ const STRINGS = {
     lang_auto: "Automat (limba Home Assistant)",
     illustration: "Ilustrație",
     illustration_theme: "Tema ilustrației",
-    theme_auto: "Automat (soare sau temă întunecată)",
+    theme_auto: "Automat (urmează tema)",
     theme_day: "Zi",
     theme_night: "Noapte",
   },
@@ -829,7 +829,7 @@ const STRINGS = {
     lang_auto: "Automatisk (Home Assistants sprog)",
     illustration: "Illustration",
     illustration_theme: "Illustrationstema",
-    theme_auto: "Automatisk (sol eller mørkt tema)",
+    theme_auto: "Automatisk (følger temaet)",
     theme_day: "Dag",
     theme_night: "Nat",
   },
@@ -894,7 +894,7 @@ const STRINGS = {
     lang_auto: "Automatiskt (Home Assistants språk)",
     illustration: "Illustration",
     illustration_theme: "Illustrationstema",
-    theme_auto: "Automatiskt (sol eller mörkt tema)",
+    theme_auto: "Automatiskt (följer temat)",
     theme_day: "Dag",
     theme_night: "Natt",
   },
@@ -959,7 +959,7 @@ const STRINGS = {
     lang_auto: "Автоматично (езикът на Home Assistant)",
     illustration: "Илюстрация",
     illustration_theme: "Тема на илюстрацията",
-    theme_auto: "Автоматично (слънце или тъмна тема)",
+    theme_auto: "Автоматично (следва темата)",
     theme_day: "Ден",
     theme_night: "Нощ",
   },
@@ -1024,7 +1024,7 @@ const STRINGS = {
     lang_auto: "Автоматически (язык Home Assistant)",
     illustration: "Иллюстрация",
     illustration_theme: "Тема иллюстрации",
-    theme_auto: "Автоматически (солнце или тёмная тема)",
+    theme_auto: "Автоматически (по теме)",
     theme_day: "День",
     theme_night: "Ночь",
   },
@@ -1089,7 +1089,7 @@ const STRINGS = {
     lang_auto: "Автоматично (мова Home Assistant)",
     illustration: "Ілюстрація",
     illustration_theme: "Тема ілюстрації",
-    theme_auto: "Автоматично (сонце або темна тема)",
+    theme_auto: "Автоматично (за темою)",
     theme_day: "День",
     theme_night: "Ніч",
   },
@@ -1154,7 +1154,7 @@ const STRINGS = {
     lang_auto: "Automatikus (a Home Assistant nyelve)",
     illustration: "Illusztráció",
     illustration_theme: "Illusztráció témája",
-    theme_auto: "Automatikus (nap vagy sötét téma)",
+    theme_auto: "Automatikus (a témát követi)",
     theme_day: "Nappal",
     theme_night: "Éjszaka",
   },
@@ -1219,7 +1219,7 @@ const STRINGS = {
     lang_auto: "Automaticky (jazyk Home Assistant)",
     illustration: "Ilustrácia",
     illustration_theme: "Téma ilustrácie",
-    theme_auto: "Automaticky (slnko alebo tmavá téma)",
+    theme_auto: "Automaticky (podľa témy)",
     theme_day: "Deň",
     theme_night: "Noc",
   },
@@ -1284,7 +1284,7 @@ const STRINGS = {
     lang_auto: "Automaticky (jazyk Home Assistant)",
     illustration: "Ilustrace",
     illustration_theme: "Motiv ilustrace",
-    theme_auto: "Automaticky (slunce nebo tmavý motiv)",
+    theme_auto: "Automaticky (podle motivu)",
     theme_day: "Den",
     theme_night: "Noc",
   },
@@ -1349,7 +1349,7 @@ const STRINGS = {
     lang_auto: "Samodejno (jezik Home Assistanta)",
     illustration: "Ilustracija",
     illustration_theme: "Tema ilustracije",
-    theme_auto: "Samodejno (sonce ali temna tema)",
+    theme_auto: "Samodejno (sledi temi)",
     theme_day: "Dan",
     theme_night: "Noč",
   },
@@ -1414,7 +1414,7 @@ const STRINGS = {
     lang_auto: "Automātiski (Home Assistant valoda)",
     illustration: "Ilustrācija",
     illustration_theme: "Ilustrācijas tēma",
-    theme_auto: "Automātiski (saule vai tumšais motīvs)",
+    theme_auto: "Automātiski (seko tēmai)",
     theme_day: "Diena",
     theme_night: "Nakts",
   },
@@ -1479,7 +1479,7 @@ const STRINGS = {
     lang_auto: "Αυτόματη (γλώσσα του Home Assistant)",
     illustration: "Εικονογράφηση",
     illustration_theme: "Θέμα εικονογράφησης",
-    theme_auto: "Αυτόματο (ήλιος ή σκούρο θέμα)",
+    theme_auto: "Αυτόματο (ακολουθεί το θέμα)",
     theme_day: "Ημέρα",
     theme_night: "Νύχτα",
   },
@@ -1675,13 +1675,13 @@ const sceneSvg = (status, night, uid) => {
     <circle class="${live ? "uc-blink" : ""}" cx="34" cy="28" r="1.4" fill="${led}" style="animation-delay:.8s" opacity=".7"/></svg>`;
 };
 
-// Night picture: forced by illustration_theme, else the sun below the horizon or Home Assistant's dark theme
-// (an unknown or unavailable sun leaves the theme alone to decide).
+// Night picture: forced by illustration_theme, else Home Assistant's dark theme alone (a light theme keeps the day
+// picture after sunset).
 const isNight = (hass, config) => {
   const theme = config?.illustration_theme;
   if (theme === "night") return true;
   if (theme === "day") return false;
-  return hass?.states?.["sun.sun"]?.state === "below_horizon" || !!hass?.themes?.darkMode;
+  return !!hass?.themes?.darkMode;
 };
 
 // The header icon's colour on the banner follows the overall status: all up in green, pending or a warning in amber,
@@ -2242,7 +2242,7 @@ class UptimeBase extends HTMLElement {
     const h = this._hass;
     if (!h?.entities || !this._config) return null;
     const ids = this._services().flatMap((s) => [s.status, s.latency, s.cert, s.uptime, s.url, s.hostname, s.type, s.tags_entity]);
-    return [h.entities, h.devices, h.language, h.locale, h.themes?.darkMode, this._illustrated() ? h.states["sun.sun"] : undefined, this._rev, this._minute, ...ids.map((id) => (id ? h.states[id] : undefined))];
+    return [h.entities, h.devices, h.language, h.locale, h.themes?.darkMode, this._rev, this._minute, ...ids.map((id) => (id ? h.states[id] : undefined))];
   }
 
   connectedCallback() {
