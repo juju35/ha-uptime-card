@@ -163,6 +163,7 @@ auto: true                 # also add every service found (default: only the lis
 | `illustration` | both | `true` | Illustrated header (90 px): the rack of the overall status, with its animations, in a server room on a concrete floor strip, the title and status on its left and the heart-pulse icon in the status colour (green all up, amber pending or warning, red down, blue maintenance, grey unknown). `false` keeps the classic header, the rack then sits in the overview |
 | `illustration_theme` | both | `auto` | Illustrated header: `auto` (follows the Home Assistant theme: night with a dark theme, day with a light theme), `day` or `night` |
 | `entities` | both | — | Services to show, in this order: entity ids, or objects with `entity` and optional `name`, `tags` (list), `latency_entity` (milliseconds or seconds), `cert_entity` (a timestamp, or days left) and `uptime_entity` (percent). Without it, every service found is shown |
+| `names` | both (YAML only) | — | Display names by service key (the status entity id): `{ binary_sensor.nas: NAS }`; overrides the discovered name |
 | `auto` | both | `true` without `entities`, else `false` | Also add every service found to the listed ones |
 | `sources` | both | all | Integrations to find services in: `uptime_kuma`, `healthchecks`, `ping`, `cert_expiry` |
 | `exclude` | both | — | Entity ids of services found that the card leaves out |

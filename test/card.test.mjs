@@ -438,3 +438,8 @@ test("the services are not matched again on an unrelated state change", () => {
   card.hass = makeHass({ ...states, "light.unrelated": { state: "on", attributes: {} } });
   assert.equal(card._services(), first);
 });
+
+test("names: a display name by service key overrides the discovered one", () => {
+  const card = newCard({ group_by: "none", names: { "binary_sensor.nas": "Storage box" } });
+  assert.match(html(card), /class="svc-name">Storage box</);
+});
