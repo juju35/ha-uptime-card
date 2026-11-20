@@ -117,6 +117,15 @@ const STRINGS = {
     theme_auto: "Automatic (follows the theme)",
     theme_day: "Day",
     theme_night: "Night",
+    off: "Off",
+    n_off: "{n} off",
+    up_for: "Up for {d}",
+    time_up: "Time up",
+    now: "now",
+    track: "Time counted",
+    track_down: "Time down (outages)",
+    track_up: "Time up (on time and its periods)",
+    show_periods: "Show the periods up",
   },
   fr: {
     title: "Services",
@@ -182,6 +191,15 @@ const STRINGS = {
     theme_auto: "Automatique (suit le thème)",
     theme_day: "Jour",
     theme_night: "Nuit",
+    off: "Éteint",
+    n_off: "Éteint : {n}",
+    up_for: "En ligne depuis {d}",
+    time_up: "Temps en ligne",
+    now: "maintenant",
+    track: "Temps compté",
+    track_down: "Temps hors ligne (pannes)",
+    track_up: "Temps en ligne (durée et plages)",
+    show_periods: "Afficher les plages en ligne",
   },
   de: {
     title: "Dienste",
@@ -247,6 +265,15 @@ const STRINGS = {
     theme_auto: "Automatisch (folgt dem Thema)",
     theme_day: "Tag",
     theme_night: "Nacht",
+    off: "Aus",
+    n_off: "Aus: {n}",
+    up_for: "Seit {d} online",
+    time_up: "Online-Zeit",
+    now: "jetzt",
+    track: "Gezählte Zeit",
+    track_down: "Offline-Zeit (Ausfälle)",
+    track_up: "Online-Zeit (Dauer und Zeiträume)",
+    show_periods: "Online-Zeiträume anzeigen",
   },
   es: {
     title: "Servicios",
@@ -312,6 +339,15 @@ const STRINGS = {
     theme_auto: "Automático (sigue el tema)",
     theme_day: "Día",
     theme_night: "Noche",
+    off: "Apagado",
+    n_off: "Apagados: {n}",
+    up_for: "Activo desde hace {d}",
+    time_up: "Tiempo activo",
+    now: "ahora",
+    track: "Tiempo contado",
+    track_down: "Tiempo caído (fallos)",
+    track_up: "Tiempo activo (duración y franjas)",
+    show_periods: "Mostrar las franjas activas",
   },
   it: {
     title: "Servizi",
@@ -377,6 +413,15 @@ const STRINGS = {
     theme_auto: "Automatico (segue il tema)",
     theme_day: "Giorno",
     theme_night: "Notte",
+    off: "Spento",
+    n_off: "Spenti: {n}",
+    up_for: "Online da {d}",
+    time_up: "Tempo online",
+    now: "ora",
+    track: "Tempo conteggiato",
+    track_down: "Tempo offline (guasti)",
+    track_up: "Tempo online (durata e fasce)",
+    show_periods: "Mostra le fasce online",
   },
   nl: {
     title: "Diensten",
@@ -442,6 +487,15 @@ const STRINGS = {
     theme_auto: "Automatisch (volgt het thema)",
     theme_day: "Dag",
     theme_night: "Nacht",
+    off: "Uit",
+    n_off: "Uit: {n}",
+    up_for: "Al {d} online",
+    time_up: "Online tijd",
+    now: "nu",
+    track: "Getelde tijd",
+    track_down: "Offline tijd (storingen)",
+    track_up: "Online tijd (duur en periodes)",
+    show_periods: "Online periodes tonen",
   },
   pt: {
     title: "Serviços",
@@ -507,6 +561,15 @@ const STRINGS = {
     theme_auto: "Automático (segue o tema)",
     theme_day: "Dia",
     theme_night: "Noite",
+    off: "Desligado",
+    n_off: "Desligados: {n}",
+    up_for: "Ativo há {d}",
+    time_up: "Tempo ativo",
+    now: "agora",
+    track: "Tempo contado",
+    track_down: "Tempo em baixo (falhas)",
+    track_up: "Tempo ativo (duração e períodos)",
+    show_periods: "Mostrar os períodos ativos",
   },
   pl: {
     title: "Usługi",
@@ -572,6 +635,15 @@ const STRINGS = {
     theme_auto: "Automatycznie (według motywu)",
     theme_day: "Dzień",
     theme_night: "Noc",
+    off: "Wyłączona",
+    n_off: "Wyłączone: {n}",
+    up_for: "Dostępna od {d}",
+    time_up: "Czas dostępności",
+    now: "teraz",
+    track: "Liczony czas",
+    track_down: "Czas niedostępności (awarie)",
+    track_up: "Czas dostępności (długość i okresy)",
+    show_periods: "Pokaż okresy dostępności",
   },
   sr: {
     title: "Сервиси",
@@ -637,6 +709,15 @@ const STRINGS = {
     theme_auto: "Аутоматски (прати тему)",
     theme_day: "Дан",
     theme_night: "Ноћ",
+    off: "Искључено",
+    n_off: "Искључено: {n}",
+    up_for: "Ради већ {d}",
+    time_up: "Време рада",
+    now: "сада",
+    track: "Рачунато време",
+    track_down: "Време када не ради (кварови)",
+    track_up: "Време рада (трајање и периоди)",
+    show_periods: "Прикажи периоде рада",
   },
   "sr-Latn": {
     title: "Servisi",
@@ -702,6 +783,15 @@ const STRINGS = {
     theme_auto: "Automatski (prati temu)",
     theme_day: "Dan",
     theme_night: "Noć",
+    off: "Isključeno",
+    n_off: "Isključeno: {n}",
+    up_for: "Radi već {d}",
+    time_up: "Vreme rada",
+    now: "sada",
+    track: "Računato vreme",
+    track_down: "Vreme kada ne radi (kvarovi)",
+    track_up: "Vreme rada (trajanje i periodi)",
+    show_periods: "Prikaži periode rada",
   },
   ro: {
     title: "Servicii",
@@ -767,6 +857,15 @@ const STRINGS = {
     theme_auto: "Automat (urmează tema)",
     theme_day: "Zi",
     theme_night: "Noapte",
+    off: "Oprit",
+    n_off: "Oprite: {n}",
+    up_for: "Activ de {d}",
+    time_up: "Timp activ",
+    now: "acum",
+    track: "Timp numărat",
+    track_down: "Timp căzut (pene)",
+    track_up: "Timp activ (durată și intervale)",
+    show_periods: "Afișează intervalele active",
   },
   da: {
     title: "Tjenester",
@@ -832,6 +931,15 @@ const STRINGS = {
     theme_auto: "Automatisk (følger temaet)",
     theme_day: "Dag",
     theme_night: "Nat",
+    off: "Slukket",
+    n_off: "Slukket: {n}",
+    up_for: "Oppe i {d}",
+    time_up: "Oppetid",
+    now: "nu",
+    track: "Optalt tid",
+    track_down: "Nedetid (udfald)",
+    track_up: "Oppetid (varighed og perioder)",
+    show_periods: "Vis perioderne oppe",
   },
   sv: {
     title: "Tjänster",
@@ -897,6 +1005,15 @@ const STRINGS = {
     theme_auto: "Automatiskt (följer temat)",
     theme_day: "Dag",
     theme_night: "Natt",
+    off: "Av",
+    n_off: "Av: {n}",
+    up_for: "Uppe i {d}",
+    time_up: "Drifttid",
+    now: "nu",
+    track: "Räknad tid",
+    track_down: "Nertid (avbrott)",
+    track_up: "Drifttid (längd och perioder)",
+    show_periods: "Visa perioderna uppe",
   },
   bg: {
     title: "Услуги",
@@ -962,6 +1079,15 @@ const STRINGS = {
     theme_auto: "Автоматично (следва темата)",
     theme_day: "Ден",
     theme_night: "Нощ",
+    off: "Изключено",
+    n_off: "Изключени: {n}",
+    up_for: "Работи от {d}",
+    time_up: "Време на работа",
+    now: "сега",
+    track: "Отчитано време",
+    track_down: "Време без работа (сривове)",
+    track_up: "Време на работа (продължителност и периоди)",
+    show_periods: "Покажи периодите на работа",
   },
   ru: {
     title: "Сервисы",
@@ -1027,6 +1153,15 @@ const STRINGS = {
     theme_auto: "Автоматически (по теме)",
     theme_day: "День",
     theme_night: "Ночь",
+    off: "Выключен",
+    n_off: "Выключены: {n}",
+    up_for: "Работает уже {d}",
+    time_up: "Время работы",
+    now: "сейчас",
+    track: "Учитываемое время",
+    track_down: "Время простоя (сбои)",
+    track_up: "Время работы (длительность и периоды)",
+    show_periods: "Показывать периоды работы",
   },
   uk: {
     title: "Сервіси",
@@ -1092,6 +1227,15 @@ const STRINGS = {
     theme_auto: "Автоматично (за темою)",
     theme_day: "День",
     theme_night: "Ніч",
+    off: "Вимкнено",
+    n_off: "Вимкнені: {n}",
+    up_for: "Працює вже {d}",
+    time_up: "Час роботи",
+    now: "зараз",
+    track: "Час, що враховується",
+    track_down: "Час простою (збої)",
+    track_up: "Час роботи (тривалість і періоди)",
+    show_periods: "Показувати періоди роботи",
   },
   hu: {
     title: "Szolgáltatások",
@@ -1157,6 +1301,15 @@ const STRINGS = {
     theme_auto: "Automatikus (a témát követi)",
     theme_day: "Nappal",
     theme_night: "Éjszaka",
+    off: "Kikapcsolva",
+    n_off: "Kikapcsolva: {n}",
+    up_for: "{d} óta elérhető",
+    time_up: "Működési idő",
+    now: "most",
+    track: "Számolt idő",
+    track_down: "Leállási idő (kiesések)",
+    track_up: "Működési idő (időtartam és időszakok)",
+    show_periods: "Működési időszakok megjelenítése",
   },
   sk: {
     title: "Služby",
@@ -1222,6 +1375,15 @@ const STRINGS = {
     theme_auto: "Automaticky (podľa témy)",
     theme_day: "Deň",
     theme_night: "Noc",
+    off: "Vypnuté",
+    n_off: "Vypnuté: {n}",
+    up_for: "Dostupné {d}",
+    time_up: "Čas dostupnosti",
+    now: "teraz",
+    track: "Počítaný čas",
+    track_down: "Čas nedostupnosti (výpadky)",
+    track_up: "Čas dostupnosti (trvanie a obdobia)",
+    show_periods: "Zobraziť obdobia dostupnosti",
   },
   cs: {
     title: "Služby",
@@ -1287,6 +1449,15 @@ const STRINGS = {
     theme_auto: "Automaticky (podle motivu)",
     theme_day: "Den",
     theme_night: "Noc",
+    off: "Vypnuto",
+    n_off: "Vypnuto: {n}",
+    up_for: "Dostupné {d}",
+    time_up: "Doba dostupnosti",
+    now: "nyní",
+    track: "Počítaný čas",
+    track_down: "Doba nedostupnosti (výpadky)",
+    track_up: "Doba dostupnosti (trvání a období)",
+    show_periods: "Zobrazit období dostupnosti",
   },
   sl: {
     title: "Storitve",
@@ -1352,6 +1523,15 @@ const STRINGS = {
     theme_auto: "Samodejno (sledi temi)",
     theme_day: "Dan",
     theme_night: "Noč",
+    off: "Izklopljeno",
+    n_off: "Izklopljeno: {n}",
+    up_for: "Deluje že {d}",
+    time_up: "Čas delovanja",
+    now: "zdaj",
+    track: "Šteti čas",
+    track_down: "Čas nedelovanja (izpadi)",
+    track_up: "Čas delovanja (trajanje in obdobja)",
+    show_periods: "Pokaži obdobja delovanja",
   },
   lv: {
     title: "Pakalpojumi",
@@ -1417,6 +1597,15 @@ const STRINGS = {
     theme_auto: "Automātiski (seko tēmai)",
     theme_day: "Diena",
     theme_night: "Nakts",
+    off: "Izslēgts",
+    n_off: "Izslēgti: {n}",
+    up_for: "Darbojas jau {d}",
+    time_up: "Darbības laiks",
+    now: "tagad",
+    track: "Skaitītais laiks",
+    track_down: "Dīkstāves laiks (traucējumi)",
+    track_up: "Darbības laiks (ilgums un periodi)",
+    show_periods: "Rādīt darbības periodus",
   },
   el: {
     title: "Υπηρεσίες",
@@ -1482,6 +1671,15 @@ const STRINGS = {
     theme_auto: "Αυτόματο (ακολουθεί το θέμα)",
     theme_day: "Ημέρα",
     theme_night: "Νύχτα",
+    off: "Ανενεργό",
+    n_off: "Ανενεργά: {n}",
+    up_for: "Σε λειτουργία για {d}",
+    time_up: "Χρόνος λειτουργίας",
+    now: "τώρα",
+    track: "Χρόνος που μετράται",
+    track_down: "Χρόνος εκτός λειτουργίας (διακοπές)",
+    track_up: "Χρόνος λειτουργίας (διάρκεια και περίοδοι)",
+    show_periods: "Εμφάνιση περιόδων λειτουργίας",
   },
 };
 
@@ -1532,6 +1730,15 @@ const fmtDuration = (ms, locale) => {
   return fmtUnit(Math.floor(h / 24), "day", locale);
 };
 
+// A longer duration in hours and minutes: "12 min", "3 h", "3 h 20 min" (rounded down to the minute).
+const fmtDurationHM = (ms, locale) => {
+  const min = Math.max(0, Math.floor(ms / 60000));
+  const h = Math.floor(min / 60);
+  const m = min % 60;
+  if (!h) return fmtUnit(m, "minute", locale);
+  return m ? `${fmtUnit(h, "hour", locale)} ${fmtUnit(m, "minute", locale)}` : fmtUnit(h, "hour", locale);
+};
+
 // A response time: "42 ms" below a second, "1.2 s" above.
 const fmtLatency = (ms, locale) => (ms < 1000 ? fmtUnit(Math.round(ms), "millisecond", locale) : fmtUnit(ms / 1000, "second", locale, 1));
 
@@ -1554,8 +1761,10 @@ const ago = (locale, ms) => {
 // ---------------------------------------------------------------------------
 
 // A service status, from best to worst; its class colors the dots, chips and bars.
-const STATUS_RANK = { unknown: 0, up: 1, maintenance: 2, pending: 3, down: 4 };
-const STATUS_CLASS = { up: "ok", down: "crit", pending: "warn", maintenance: "maint", unknown: "idle" };
+// "off" is a service down that the card tracks for its time up (`track: up`, a PC or a console): a normal state, in
+// grey, not a problem; any time up in a slice of the bar outweighs it.
+const STATUS_RANK = { unknown: 0, off: 0.5, up: 1, maintenance: 2, pending: 3, down: 4 };
+const STATUS_CLASS = { up: "ok", down: "crit", pending: "warn", maintenance: "maint", unknown: "idle", off: "idle" };
 const UP_WORDS = new Set(["up", "on", "online", "ok", "connected", "home", "true", "running", "available", "alive", "healthy"]);
 const DOWN_WORDS = new Set(["down", "off", "offline", "error", "problem", "disconnected", "false", "unreachable", "failed", "dead", "unhealthy"]);
 
@@ -1894,6 +2103,7 @@ const hostFor = (hass, svc) => {
 // ---------------------------------------------------------------------------
 
 const BUCKETS = 48;
+const PERIODS_SHOWN = 6;
 const HISTORY_TTL = 5 * 60000;
 
 // History of the websocket (compressed: { s, lu, lc } in seconds; or full: { state, last_changed }) as [{ t, s }].
@@ -1943,9 +2153,24 @@ const uptimeShare = (segs) => {
   let down = 0;
   for (const s of segs) {
     if (s.status === "up") up += s.to - s.from;
-    else if (s.status === "down") down += s.to - s.from;
+    else if (s.status === "down" || s.status === "off") down += s.to - s.from;
   }
   return up + down > 0 ? (100 * up) / (up + down) : null;
+};
+
+// The periods a service was up in the window, the latest first: [{ from, to, open }] (open: still up), with the
+// total time up. Back-to-back up segments make one period.
+const upPeriods = (segs, end) => {
+  const out = [];
+  for (const s of segs) {
+    if (s.status !== "up" || s.to <= s.from) continue;
+    const last = out[out.length - 1];
+    if (last && last.to === s.from) last.to = s.to;
+    else out.push({ from: s.from, to: s.to });
+  }
+  const total = out.reduce((a, p) => a + p.to - p.from, 0);
+  for (const p of out) p.open = p.to >= end;
+  return { periods: out.reverse(), total };
 };
 
 // ---------------------------------------------------------------------------
@@ -2085,6 +2310,11 @@ const FULL_STYLE = `
   .hbar { grid-column: 2 / 4; display: flex; gap: 2px; height: 14px; }
   .hbar i { flex: 1 1 0; min-width: 0; border-radius: 2px; background: var(--c, var(--divider-color, rgba(127,127,127,.25))); }
   .hbar i.none { --c: var(--divider-color, rgba(127,127,127,.25)); }
+  /* Periods up of a service tracked up, under its bar. */
+  .periods { grid-column: 2 / 4; display: flex; flex-wrap: wrap; gap: 4px; font-size: 12px; color: var(--secondary-text-color); font-variant-numeric: tabular-nums; }
+  .period { padding: 1px 6px; border-radius: 6px; background: color-mix(in srgb, var(--uc-ok) 12%, transparent); white-space: nowrap; }
+  .period.open { color: color-mix(in srgb, var(--uc-ok) 50%, var(--primary-text-color)); font-weight: 500; }
+  .period.more { background: none; }
   .empty-line { display: flex; align-items: center; gap: 6px; font-size: 13px; color: var(--secondary-text-color); padding: 4px 0; }
   .empty-line .icon { color: var(--uc-ok); width: 16px; height: 16px; }
   /* Narrow card: the uptime percentage gives way first, then the bar takes a thinner slice gap. */
@@ -2361,6 +2591,13 @@ class UptimeBase extends HTMLElement {
     return Number.isFinite(v) && this._config[key] !== "" && this._config[key] !== null ? v : DEFAULTS[key];
   }
 
+  // What a service's time is counted as: "down" (outages, the default) or "up" (time on, for a PC or a console):
+  // its `track` in `entities`, else the card's.
+  _track(svc) {
+    const v = svc.conf?.track ?? this._config.track;
+    return v === "up" ? "up" : "down";
+  }
+
   // The status pill goes right after the title only when the whole title and the pill's whole label fit on that row;
   // otherwise it takes a line of its own under the subtitle (.titles.below, the subtitle cut to one line). In the
   // banner (where that line may run over the picture), when the titles still run below the top of the ground strip or
@@ -2474,7 +2711,9 @@ class UptimeBase extends HTMLElement {
   _loadHistory(services) {
     const h = this._hass;
     const c = this._config;
-    if (typeof h?.callWS !== "function" || (c.show_history === false && c.show_uptime === false)) return;
+    if (typeof h?.callWS !== "function") return;
+    const periods = c.show_periods !== false && services.some((s) => this._track(s) === "up");
+    if (c.show_history === false && c.show_uptime === false && !periods) return;
     const ids = services.filter((s) => s.source !== "cert_expiry").map((s) => s.status);
     if (!ids.length) return;
     const key = `${ids.join(",")}|${this._opt("hours")}`;
@@ -2572,6 +2811,9 @@ class UptimeBase extends HTMLElement {
     } else {
       view.status = statusFromState(svc.status, st?.state, st?.attributes?.device_class);
     }
+    view.track = svc.source === "cert_expiry" ? "down" : this._track(svc);
+    const off = (status) => (view.track === "up" && status === "down" ? "off" : status);
+    view.status = off(view.status);
     if (!view.name) {
       const dev = h.devices?.[svc.device_id];
       view.name =
@@ -2582,6 +2824,8 @@ class UptimeBase extends HTMLElement {
             : st?.attributes?.friendly_name || deviceName(dev) || svc.status;
     }
     view.since = st && view.status !== "up" && svc.source !== "cert_expiry" ? Date.parse(st.last_changed) : null;
+    // Tracked up: since when it has been up.
+    view.upSince = st && view.track === "up" && view.status === "up" ? Date.parse(st.last_changed) : null;
     // Subtitle: host, monitor type or last ping
     const host = hostFor(h, svc);
     if (svc.source === "healthchecks" && st?.attributes?.last_ping) {
@@ -2644,9 +2888,10 @@ class UptimeBase extends HTMLElement {
     if (timeline && Number.isFinite(lc) && !(timeline.length && timeline[timeline.length - 1].t >= lc)) timeline = [...timeline, { t: lc, s: st.state }];
     if (timeline && svc.source !== "cert_expiry") {
       const dc = st?.attributes?.device_class;
-      const segs = segments(timeline, start, end, (raw) => statusFromState(svc.status, raw, dc), view.status);
+      const segs = segments(timeline, start, end, (raw) => off(statusFromState(svc.status, raw, dc)), view.status);
       view.bar = buckets(segs, start, end);
       view.share = uptimeShare(segs);
+      if (view.track === "up") Object.assign(view, upPeriods(segs, end));
     }
     const us = this._s(svc.uptime);
     if (hours === 24 && num(us) !== null) view.share = num(us);
@@ -2673,7 +2918,7 @@ class UptimeBase extends HTMLElement {
   }
 
   _isProblem(v) {
-    return v.status !== "up" || (v.cert && v.cert.cls !== "ok" && this._config.show_ssl !== false);
+    return (v.status !== "up" && v.status !== "off") || (v.cert && v.cert.cls !== "ok" && this._config.show_ssl !== false);
   }
 
   // Views of the services shown, sorted.
@@ -2681,7 +2926,7 @@ class UptimeBase extends HTMLElement {
     let views = [...all];
     if (this._config.only_problems) views = views.filter((v) => this._isProblem(v));
     const byName = (a, b) => String(a.name).localeCompare(String(b.name), this._locale());
-    const order = { down: 0, pending: 1, maintenance: 2, unknown: 3, up: 4 };
+    const order = { down: 0, pending: 1, maintenance: 2, unknown: 3, up: 4, off: 5 };
     views.sort(this._config.sort === "name" ? byName : (a, b) => order[a.status] - order[b.status] || byName(a, b));
     return views;
   }
@@ -2696,11 +2941,13 @@ class UptimeBase extends HTMLElement {
     const down = count("down");
     const pending = count("pending");
     const maint = count("maintenance");
+    const offs = count("off");
     let chip;
     if (down) chip = { cls: "crit", text: this._t("n_down", { n: down }) };
     else if (pending) chip = { cls: "warn", text: this._t("n_pending", { n: pending }) };
     else if (maint) chip = { cls: "maint", text: this._t("n_maintenance", { n: maint }) };
     else if (total && up === total) chip = { cls: "ok", text: this._t("all_up") };
+    else if (offs && up + offs === total) chip = { cls: "ok", text: this._t("n_off", { n: offs }) };
     else chip = total ? { cls: "idle", text: this._t("unknown") } : null;
     const levels = [chip?.cls || "", ...certs, slow ? "warn" : ""];
     const icon = levels.includes("crit") ? "crit" : levels.includes("warn") ? "warn" : chip?.cls || "";
@@ -2813,6 +3060,7 @@ class UptimeBase extends HTMLElement {
 
   _statusText(v) {
     if (v.status === "down" && Number.isFinite(v.since)) return this._t("down_for", { d: fmtDuration(Date.now() - v.since, this._locale()) });
+    if (v.status === "up" && Number.isFinite(v.upSince)) return this._t("up_for", { d: fmtDurationHM(Date.now() - v.upSince, this._locale()) });
     return this._t(v.status);
   }
 }
@@ -2851,7 +3099,7 @@ class UptimeCard extends UptimeBase {
     const statusTxt = this._statusText(v);
     const sub = [];
     const src = SOURCES[v.svc.source] || SOURCES.entity;
-    if (v.status !== "up") sub.push(`<span class="txt stxt ${cls}">${esc(statusTxt)}</span>`);
+    if (v.status !== "up" || v.track === "up") sub.push(`<span class="txt stxt ${cls}">${esc(statusTxt)}</span>`);
     else if (v.detail) sub.push(`<span class="txt">${esc(v.detail)}</span>`);
     if (v.cert && c.show_ssl !== false) {
       const label = this._certLabel(v.cert);
@@ -2864,7 +3112,10 @@ class UptimeCard extends UptimeBase {
     const meta = [];
     if (c.show_latency !== false && v.latency !== null && v.latency !== undefined)
       meta.push(`<span class="lat ${v.latencyCls}" title="${esc(this._t("latency"))}">${esc(fmtLatency(v.latency, locale))}</span>`);
-    if (c.show_uptime !== false && v.share !== null && v.share !== undefined) {
+    if (c.show_uptime !== false && v.track === "up" && Number.isFinite(v.total)) {
+      // Tracked up: the time up over the window rather than a percentage.
+      meta.push(`<span class="pct dur" title="${esc(`${this._t("time_up")} · ${this._t("history", { h: this._opt("hours") })}`)}">${esc(fmtDurationHM(v.total, locale))}</span>`);
+    } else if (c.show_uptime !== false && v.share !== null && v.share !== undefined) {
       const pc = v.share >= 99 ? "" : v.share >= 95 ? "warn" : "crit";
       meta.push(`<span class="pct ${pc}" title="${esc(this._t("uptime"))}">${esc(fmtPct(v.share, locale))}</span>`);
     }
@@ -2872,13 +3123,29 @@ class UptimeCard extends UptimeBase {
       c.show_history !== false && v.bar
         ? `<div class="hbar" role="img" aria-label="${esc(`${this._t("history", { h: this._opt("hours") })}${v.share != null ? `: ${fmtPct(v.share, locale)}` : ""}`)}">${v.bar.map((b) => `<i class="${b === "none" ? "none" : STATUS_CLASS[b]}"></i>`).join("")}</div>`
         : "";
+    const periods = c.show_periods !== false && v.track === "up" && v.periods?.length ? this._periods(v.periods) : "";
     const label = `${v.name}: ${statusTxt}`;
     return `<div class="svc clickable" role="button" tabindex="0" data-entity="${esc(v.entity)}" aria-label="${esc(label)}">
         <span class="dot ${cls}" title="${esc(statusTxt)}"></span>
         <div class="svc-main"><div class="svc-name">${esc(v.name)}</div><div class="svc-sub">${svgIcon(ICONS[src.icon])}${sub.join("")}</div></div>
         <div class="meta">${meta.join("")}</div>
-        ${bar}
+        ${bar}${periods}
       </div>`;
+  }
+
+  // The periods up of a service tracked up, the latest first: "17:10 – now", "Mon 14:02 – 15:30" (the day when it is
+  // not today); the first PERIODS_SHOWN, the others counted as +N.
+  _periods(list) {
+    const locale = this._locale();
+    const today = new Date().toDateString();
+    const hm = (ms) => new Date(ms).toLocaleTimeString(locale, { hour: "2-digit", minute: "2-digit" });
+    const day = (ms) => (new Date(ms).toDateString() === today ? "" : `${new Date(ms).toLocaleDateString(locale, { weekday: "short" })} `);
+    const text = (p) => `${day(p.from)}${hm(p.from)} – ${p.open ? this._t("now") : `${new Date(p.to).toDateString() === new Date(p.from).toDateString() ? "" : day(p.to)}${hm(p.to)}`}`;
+    const shown = list.slice(0, PERIODS_SHOWN);
+    const all = list.map(text).join(", ");
+    return `<div class="periods" title="${esc(all)}" aria-label="${esc(`${this._t("time_up")}: ${all}`)}">${shown
+      .map((p) => `<span class="period${p.open ? " open" : ""}">${esc(text(p))}</span>`)
+      .join("")}${list.length > shown.length ? `<span class="period more">+${list.length - shown.length}</span>` : ""}</div>`;
   }
 
   // Groups of the list: [{ key, label, icon, views }], or null for a flat list.
@@ -3131,6 +3398,7 @@ class UptimeEditorBase extends HTMLElement {
       ["show_history", true],
       ["show_uptime", true],
       ["show_ssl", true],
+      ["show_periods", true],
       ["only_problems", false],
     ];
   }
@@ -3162,6 +3430,7 @@ class UptimeEditorBase extends HTMLElement {
         schema: [
           { name: "group_by", selector: { select: { mode: "dropdown", options: ["tag", "source", "none"].map((v) => ({ value: v, label: tr(`group_${v}`) })) } } },
           { name: "sort", selector: { select: { mode: "dropdown", options: ["status", "name"].map((v) => ({ value: v, label: tr(`sort_${v}`) })) } } },
+          { name: "track", selector: { select: { mode: "dropdown", options: ["down", "up"].map((v) => ({ value: v, label: tr(`track_${v}`) })) } } },
         ],
       },
       { type: "grid", name: "", schema: this.constructor.toggles.map(([name]) => ({ name, selector: { boolean: {} } })) },
@@ -3205,7 +3474,7 @@ class UptimeEditorBase extends HTMLElement {
   }
 
   _defaults() {
-    return { ...Object.fromEntries(this.constructor.toggles), group_by: "tag", sort: "status", illustration_theme: "auto", ...Object.fromEntries(this.constructor.numbers.map((n) => [n, DEFAULTS[n]])) };
+    return { ...Object.fromEntries(this.constructor.toggles), group_by: "tag", sort: "status", track: "down", illustration_theme: "auto", ...Object.fromEntries(this.constructor.numbers.map((n) => [n, DEFAULTS[n]])) };
   }
 
   _render() {

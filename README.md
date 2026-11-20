@@ -32,6 +32,7 @@ The cards work on top of the integrations you already use — [Uptime Kuma](http
 - Status of each service (**up**, **down**, **pending**, **maintenance**), with how long it has been down
 - **Response time** (Uptime Kuma, Ping), in orange above a threshold you choose
 - **Uptime bar** of the last 24 hours (48 slices of 30 minutes, each in the color of the worst status seen in it) and the **uptime percentage**, from the Home Assistant history (or Uptime Kuma's own 1-day uptime sensor when it is enabled)
+- **Time up instead of downtime** (`track: up`, for the whole card or per entity): for a PC, a console or any device whose time on matters more than its outages — `Off` in grey (not a problem), `Up for 1 hr 20 min`, the time up over the window instead of a percentage and the periods up (`7:10 PM – now`, `Thu 4:42 PM – 6:12 PM`) under the bar
 - **SSL certificate expiry** (Uptime Kuma, Certificate Expiry): days left on every row, the date in its tooltip, orange then red as the expiry gets close, red when expired or invalid; a Certificate Expiry certificate goes to the row of the service of the same host
 - **Groups by tag** (Uptime Kuma tags and Home Assistant labels), by integration, or none; collapsible groups, a group with a service down always unfolded
 - An overview at the top of the full card: a drawn server rack in the color of the worst status, animated by it (see [Animations](#animations)), the status in words, the share of services up, the service down the longest, the most urgent certificate and the integrations the services come from
@@ -131,6 +132,8 @@ show_latency: true
 show_history: true
 show_uptime: true
 show_ssl: true
+show_periods: true
+track: down                # down (outages) or up (time on)
 hours: 24
 ssl_warning_days: 14
 ssl_critical_days: 3
@@ -153,6 +156,19 @@ entities:
 auto: true                 # also add every service found (default: only the listed ones)
 ```
 
+Counting the time up rather than the outages, e.g. to follow the screen time of a PC or a game console (`hours: 168` for a week):
+
+```yaml
+type: custom:uptime-card
+title: Screen time
+group_by: none
+entities:
+  - entity: binary_sensor.desktop_pc
+    track: up
+  - entity: binary_sensor.game_console
+    track: up
+```
+
 ### Options reference
 
 | Option | Card | Default | Description |
@@ -162,7 +178,7 @@ auto: true                 # also add every service found (default: only the lis
 | `show_subtitle` | both | `true` | Show the subtitle under the title (`1 down · 9/11 up` on the illustrated header, `9/11 up` on the classic one) |
 | `illustration` | both | `true` | Illustrated header (90 px): the rack of the overall status, with its animations, in a server room on a concrete floor strip, the title and status on its left and the heart-pulse icon in the status colour (green all up, amber pending or warning, red down, blue maintenance, grey unknown). `false` keeps the classic header, the rack then sits in the overview |
 | `illustration_theme` | both | `auto` | Illustrated header: `auto` (follows the Home Assistant theme: night with a dark theme, day with a light theme), `day` or `night` |
-| `entities` | both | — | Services to show, in this order: entity ids, or objects with `entity` and optional `name`, `tags` (list), `latency_entity` (milliseconds or seconds), `cert_entity` (a timestamp, or days left) and `uptime_entity` (percent). Without it, every service found is shown |
+| `entities` | both | — | Services to show, in this order: entity ids, or objects with `entity` and optional `name`, `tags` (list), `latency_entity` (milliseconds or seconds), `cert_entity` (a timestamp, or days left), `uptime_entity` (percent) and `track` (`down` or `up`, overrides the card's). Without it, every service found is shown |
 | `names` | both (YAML only) | — | Display names by service key (the status entity id): `{ binary_sensor.nas: NAS }`; overrides the discovered name |
 | `auto` | both | `true` without `entities`, else `false` | Also add every service found to the listed ones |
 | `sources` | both | all | Integrations to find services in: `uptime_kuma`, `healthchecks`, `ping`, `cert_expiry` |
@@ -177,6 +193,8 @@ auto: true                 # also add every service found (default: only the lis
 | `show_history` | both | `true` | Uptime bar of each service |
 | `show_uptime` | both | `true` | Uptime percentage of each service (whole percent, rounded down: 99.97 % reads 99 %) |
 | `show_ssl` | both | `true` | Certificate expiry of each service, and its alerts |
+| `track` | both | `down` | What the time of a service is counted as: `down` (outages: `Down for 14 min`, uptime percentage) or `up` (time on, for a PC or a console: a service down reads `Off` in grey and is not a problem, `Up for 1 hr 20 min`, the time up over the window instead of the percentage, and its periods up). Can be set per entity in `entities` |
+| `show_periods` | both | `true` | With `track: up`: the periods up of each service over the window, the latest first (`7:10 PM – now`, the day when not today), the first 6 shown and the others counted as `+N`; all of them in the tooltip |
 | `hours` | both | `24` | Length of the history of the uptime bar and percentage, in hours |
 | `ssl_warning_days` | both | `14` | Certificate in orange from this many days left |
 | `ssl_critical_days` | both | `3` | Certificate in red from this many days left (and once expired or invalid) |
@@ -264,7 +282,7 @@ The full card at its minimum width (9 of 12 columns of a narrow Sections view, 2
 
 The cards read the Home Assistant entity and device registries instead of entity ids: an Uptime Kuma monitor is the device of a `status` sensor of the `uptime_kuma` platform, with its `response_time`, `cert_days_remaining`, `url`, `hostname`, `type`, `tags` and `uptime_1d` sensors; a Ping host is a `ping` binary sensor, with the `round_trip_time_avg` sensor of its device; a Healthchecks.io check is a `healthchecksio` binary sensor; a certificate is a `cert_expiry` sensor, whose host comes from its device. Entity ids can therefore be in any language or renamed without breaking the cards. Disabled entities are left out, and so is a service whose status entity is hidden (a hidden URL, response time or certificate sensor still adds to its monitor).
 
-The uptime bar asks the recorder for the history of the status entities (one request for all of them, again every 5 minutes) and splits the window into 48 equal slices, each drawn in the color of the worst status seen in it (grey without data). The uptime percentage is the time up over the time up or down: maintenance, pending and unknown periods are left out.
+The uptime bar asks the recorder for the history of the status entities (one request for all of them, again every 5 minutes) and splits the window into 48 equal slices, each drawn in the color of the worst status seen in it (grey without data). The uptime percentage is the time up over the time up or down: maintenance, pending and unknown periods are left out. With `track: up`, the same history gives the time up over the window and its periods up (back-to-back up changes make one period).
 
 ## Development
 
