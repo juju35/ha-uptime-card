@@ -2182,6 +2182,57 @@ const focusKey = (el) => {
 
 const sameDeps = (a, b) => !!a && a.length === b.length && a.every((d, i) => d === b[i]);
 
+// ---------------------------------------------------------------------------
+// Shadow DOM patching: an update rewrites only what changed, so the kept nodes keep their running animations (the
+// rack's lights, the ECG trace), their decoded pictures, focus and hover, and <ha-card> is never replaced (Home
+// Assistant draws a new one a moment later: the card would collapse to its border while the pill is measured and
+// the page jump).
+// ---------------------------------------------------------------------------
+const patchAttrs = (cur, next) => {
+  for (const { name } of [...cur.attributes]) if (!next.hasAttribute(name)) cur.removeAttribute(name);
+  for (const { name, value } of next.attributes) if (cur.getAttribute(name) !== value) cur.setAttribute(name, value);
+};
+const keyOf = (n) => (n.nodeType === 1 ? n.getAttribute("data-key") : null);
+const sameNode = (a, b) => !!a && a.nodeType === b.nodeType && a.nodeName === b.nodeName;
+const patchChildren = (cur, next) => {
+  const old = [...cur.childNodes];
+  const fresh = [...next.childNodes];
+  const byKey = new Map();
+  for (const o of old) {
+    const k = keyOf(o);
+    if (k !== null && !byKey.has(k)) byKey.set(k, o);
+  }
+  const used = new Set();
+  fresh.forEach((n, i) => {
+    const k = keyOf(n);
+    let o = k !== null ? byKey.get(k) : old[i];
+    if (!sameNode(o, n) || used.has(o) || (k === null && keyOf(o) !== null)) o = null;
+    const ref = cur.childNodes[i] ?? null;
+    if (!o) {
+      cur.insertBefore(n, ref);
+      return;
+    }
+    used.add(o);
+    if (o !== ref) cur.insertBefore(o, ref);
+    if (n.nodeType === 1) {
+      patchAttrs(o, n);
+      // A custom element given no content (an icon) may draw its own: left as it is.
+      if (n.childNodes.length || !n.localName.includes("-")) patchChildren(o, n);
+    } else if (o.nodeValue !== n.nodeValue) o.nodeValue = n.nodeValue;
+  });
+  while (cur.childNodes.length > fresh.length) cur.removeChild(cur.lastChild);
+};
+// Writes `html` into `root` in place; a plain rewrite where there is no DOM to patch (the tests' stand-ins).
+const morph = (root, html) => {
+  const tpl = typeof document !== "undefined" ? document.createElement("template") : null;
+  if (!tpl?.content || !root.childNodes) {
+    root.innerHTML = html;
+    return;
+  }
+  tpl.innerHTML = html;
+  patchChildren(root, tpl.content);
+};
+
 const DEFAULTS = { hours: 24, ssl_warning_days: 14, ssl_critical_days: 3, latency_warning: 1000, max_items: 5 };
 
 class UptimeBase extends HTMLElement {
@@ -2266,7 +2317,8 @@ class UptimeBase extends HTMLElement {
       this._resize.observe(this);
     }
     document.fonts?.ready?.then(() => this._fitPill());
-    // Back on the page after leaving it: rendered again in its default state.
+    // Back on the page after leaving it: rendered again in its default state, label changes followed again.
+    if (this._hass) this._watchLabels();
     if (this._hass && this._config) this._update();
     // "Down for 12 min" moves on its own, and the uptime bar slides: re-checked every minute.
     clearInterval(this._tick);
@@ -2280,7 +2332,9 @@ class UptimeBase extends HTMLElement {
   disconnectedCallback() {
     clearInterval(this._tick);
     this._tick = null;
+    this._unwatchLabels();
     this._outside?.off();
+    if (typeof cancelAnimationFrame === "function") cancelAnimationFrame(this._fitFrame);
     this._resize?.disconnect();
     this._fitWidth = null;
     this._pressing = false;
@@ -2377,10 +2431,14 @@ class UptimeBase extends HTMLElement {
     return this._svcList;
   }
 
-  // HA labels of the entities and devices, by id → name (the label registry is not in hass): loaded once.
-  _loadLabels() {
+  // HA labels of the entities and devices, by id → name (the label registry is not in hass): loaded once, then again
+  // whenever a label is created, renamed or deleted (label_registry_updated), while the card is on the page.
+  _loadLabels(again = false) {
     const h = this._hass;
-    if (this._labels || this._labelsLoading || typeof h?.callWS !== "function") return;
+    if (typeof h?.callWS !== "function") return;
+    this._watchLabels();
+    // Loaded again: the names in hand stay shown until the new ones are in.
+    if ((this._labels && !again) || this._labelsLoading) return;
     this._labelsLoading = true;
     Promise.resolve(h.callWS({ type: "config/label_registry/list" }))
       .then((rows) => {
@@ -2389,8 +2447,26 @@ class UptimeBase extends HTMLElement {
         if (this._hass) this.hass = this._hass;
       })
       .catch(() => {
-        this._labels = {};
+        this._labels ||= {};
+      })
+      .finally(() => {
+        this._labelsLoading = false;
       });
+  }
+
+  _watchLabels() {
+    const conn = this._hass?.connection;
+    if (this._labelsSub || this.isConnected === false || typeof conn?.subscribeEvents !== "function") return;
+    const sub = Promise.resolve(
+      conn.subscribeEvents(() => this._loadLabels(true), "label_registry_updated"),
+    ).catch(() => null);
+    this._labelsSub = sub;
+  }
+
+  _unwatchLabels() {
+    const sub = this._labelsSub;
+    this._labelsSub = null;
+    sub?.then((unsub) => typeof unsub === "function" && unsub());
   }
 
   // Loads the history of the status entities for the uptime bar and percentage, again after HISTORY_TTL or when
@@ -2433,8 +2509,16 @@ class UptimeBase extends HTMLElement {
     if (html !== this._html) {
       const kept = this._byPointer ? null : this._focusedSpot();
       this._html = html;
-      this.shadowRoot.innerHTML = html;
+      morph(this.shadowRoot, html);
       this._fitPill();
+      // A new <ha-card> draws its frame a moment later: the pill is measured again once it has.
+      const card = this.shadowRoot.querySelector?.("ha-card");
+      if (card && card !== this._card) {
+        this._card = card;
+        Promise.resolve(card.updateComplete).then(() => {
+          if (this._card === card && this.isConnected !== false) this._fitPill();
+        });
+      }
       if (kept) this._restoreFocus(kept);
     }
   }

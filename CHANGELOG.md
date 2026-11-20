@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.1.2 - 2026-11-20
+
+### Fixes
+- A pending status-pill fit is cancelled when the card leaves the page.
+- The card patches its content in place instead of rewriting it on every Uptime Kuma heartbeat: the rack and ECG animations no longer restart, the pictures are not decoded again, the hover stays, and `<ha-card>` is kept (Home Assistant drew a new one a moment later, so the status pill was measured on a collapsed card and the page could jump). The pill is measured again once a new `<ha-card>` has rendered.
+- A Home Assistant label created, renamed or deleted shows without reloading the page (the card follows `label_registry_updated` while it is on the page).
+
+### Maintenance
+- README: the `names` option (display names by service key, YAML only) is documented, with a test.
+- Tests: a browser test of heartbeats (no node removed for the card's own updates, nothing changed for other entities, no height change, no scroll), and a test of the label registry updates; two biome warnings of the pill test fixed.
+
 ## 1.1.1 - 2026-11-18
 
 ### Fixes
