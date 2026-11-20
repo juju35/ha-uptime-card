@@ -2281,6 +2281,7 @@ class UptimeBase extends HTMLElement {
     clearInterval(this._tick);
     this._tick = null;
     this._outside?.off();
+    if (typeof cancelAnimationFrame === "function") cancelAnimationFrame(this._fitFrame);
     this._resize?.disconnect();
     this._fitWidth = null;
     this._pressing = false;
