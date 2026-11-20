@@ -322,6 +322,33 @@ test("labels are read once from the label registry", async () => {
   assert.ok(labels.length);
 });
 
+test("a label created or renamed in Home Assistant shows without reloading the page", async () => {
+  let name = "Infrastructure";
+  let listener = null;
+  let unsubscribed = 0;
+  const hass = makeHass(states, {
+    callWS: async (m) => (m.type === "config/label_registry/list" ? labels.map((l) => (l.label_id === "infrastructure" ? { ...l, name } : l)) : callWS(m)),
+    connection: {
+      subscribeEvents: async (cb, type) => {
+        assert.equal(type, "label_registry_updated");
+        listener = cb;
+        return () => unsubscribed++;
+      },
+    },
+  });
+  const card = newCard({}, hass);
+  await flush();
+  assert.match(html(card), />Infrastructure</);
+  assert.ok(listener, "subscribed to the label registry updates");
+  name = "Core services";
+  listener({ event_type: "label_registry_updated" });
+  await flush();
+  assert.match(html(card), />Core services</);
+  card.disconnectedCallback();
+  await flush();
+  assert.equal(unsubscribed, 1, "unsubscribed when the card leaves the page");
+});
+
 test("the visual editor keeps the YAML minimal and the entities' own options", () => {
   const ed = new uc.UptimeCardEditor();
   ed.setConfig({ entities: [{ entity: "sensor.media_status", name: "Movies" }] });
