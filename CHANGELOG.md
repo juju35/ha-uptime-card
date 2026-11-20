@@ -1,5 +1,13 @@
 # Changelog
 
+## 1.1.2 - 2026-11-20
+
+### Fixes
+- A pending status-pill fit is cancelled when the card leaves the page.
+
+### Maintenance
+- README: the `names` option (display names by service key, YAML only) is documented, with a test.
+
 ## 1.1.1 - 2026-11-18
 
 ### Fixes
