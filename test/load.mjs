@@ -112,8 +112,8 @@ export const load = () => {
   vm.createContext(sandbox);
   return vm.runInContext(
     `${source}
-    ({ esc, lang, intlLocale, t, STRINGS, statusFromState, worst, hostOf, discover, servicesFor, toTimeline, segments, buckets, uptimeShare,
-       fmtDuration, fmtLatency, fmtPct, rackSvg, UptimeCard: customElements.get("uptime-card"), UptimeMiniCard: customElements.get("uptime-mini-card"),
+    ({ esc, lang, intlLocale, t, STRINGS, statusFromState, worst, hostOf, discover, servicesFor, toTimeline, segments, buckets, uptimeShare, upPeriods,
+       fmtDuration, fmtDurationHM, fmtLatency, fmtPct, rackSvg, UptimeCard: customElements.get("uptime-card"), UptimeMiniCard: customElements.get("uptime-mini-card"),
        UptimeCardEditor: customElements.get("uptime-card-editor"), UptimeMiniCardEditor: customElements.get("uptime-mini-card-editor"), window, document })`,
     sandbox,
   );

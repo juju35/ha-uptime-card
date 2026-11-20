@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 - 2026-11-20
+
+### Features
+- **Time up instead of downtime** (`track: up`, for the card or per entity in `entities`), to follow the time on of a PC or a game console rather than its outages ([#21](https://github.com/juju35/ha-uptime-card/issues/21)): a service down reads `Off` in grey and is no longer a problem (no red, not in `only_problems`, the header chip reads `1 off` in green when the others are up), a service up reads `Up for 1 hr 20 min`, the time up over the window (`hours`, up to a week) replaces the percentage, and its periods up are listed under the bar, the latest first (`7:10 PM – now`, the day when not today, the first 6 then `+N`, all in the tooltip).
+- `show_periods: false` hides those periods; `track` and `show_periods` are in the visual editors, their labels in the 22 languages.
+
 ## 1.1.2 - 2026-11-20
 
 ### Fixes
