@@ -111,3 +111,23 @@ test("the editor offers the counted time, down by default and out of the YAML", 
   assert.ok(names.includes("track") && names.includes("show_periods"));
   assert.equal(ed._defaults().track, "down");
 });
+
+test("every service tracked up is off: the rack follows the status chip (up), not unknown", async () => {
+  const hass = hassWith(pcState("off", now - 40 * 60000));
+  for (const Card of [uc.UptimeCard, uc.UptimeMiniCard]) {
+    const card = new Card();
+    card.setConfig({ track: "up", entities: [PC] });
+    card.hass = hass;
+    await flush();
+    const sum = card._summary(card._allViews());
+    assert.equal(sum.chip.cls, "ok");
+    assert.equal(card._overall(sum), "up");
+    // Tracked down, the same service off is down
+    const down = new Card();
+    down.setConfig({ entities: [PC] });
+    down.hass = hass;
+    assert.equal(down._overall(down._summary(down._allViews())), "down");
+  }
+  // No service in a known state: still unknown
+  assert.equal(uc.UptimeCard.prototype._overall({ total: 2, up: 0, offs: 1, down: 0, pending: 0, maint: 0 }), "unknown");
+});
