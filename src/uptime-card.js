@@ -2951,7 +2951,7 @@ class UptimeBase extends HTMLElement {
     else chip = total ? { cls: "idle", text: this._t("unknown") } : null;
     const levels = [chip?.cls || "", ...certs, slow ? "warn" : ""];
     const icon = levels.includes("crit") ? "crit" : levels.includes("warn") ? "warn" : chip?.cls || "";
-    return { total, up, down, pending, maint, chip, icon };
+    return { total, up, down, pending, maint, offs, chip, icon };
   }
 
   // Every service of the card, the tags filter applied (not only_problems): what the totals count.
@@ -2965,11 +2965,13 @@ class UptimeBase extends HTMLElement {
   }
 
   // Overall status drawn by the picture: down, pending or maintenance when one service is, up when all others are.
+  // A service tracked up that is off (`track: up`) is a normal state: with only up and off services the picture is
+  // up, like the status chip, even when every one of them is off.
   _overall(sum) {
     if (sum.down) return "down";
     if (sum.pending) return "pending";
     if (sum.maint) return "maintenance";
-    return sum.up ? "up" : "unknown";
+    return sum.up || (sum.offs && sum.offs === sum.total) ? "up" : "unknown";
   }
 
   // Share of the services in each status, as a thin segmented bar.

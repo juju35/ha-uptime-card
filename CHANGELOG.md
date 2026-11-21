@@ -1,5 +1,10 @@
 # Changelog
 
+## 1.2.1 - 2026-11-21
+
+### Fixes
+- `track: up`: when every service is off, the rack illustration follows the status chip (`1 off`, green) and is drawn up, instead of grey and unknown.
+
 ## 1.2.0 - 2026-11-20
 
 ### Features
