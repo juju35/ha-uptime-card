@@ -126,6 +126,13 @@ const STRINGS = {
     track_down: "Time down (outages)",
     track_up: "Time up (on time and its periods)",
     show_periods: "Show the periods up",
+    period: "History period",
+    period_rolling: "Last hours (history length)",
+    period_today: "Today",
+    period_yesterday: "Yesterday",
+    period_week: "This week",
+    uptime_display: "Uptime shown as",
+    uptime_percent: "Percentage",
   },
   fr: {
     title: "Services",
@@ -200,6 +207,13 @@ const STRINGS = {
     track_down: "Temps hors ligne (pannes)",
     track_up: "Temps en ligne (durée et plages)",
     show_periods: "Afficher les plages en ligne",
+    period: "Période de l'historique",
+    period_rolling: "Dernières heures (durée de l'historique)",
+    period_today: "Aujourd'hui",
+    period_yesterday: "Hier",
+    period_week: "Cette semaine",
+    uptime_display: "Disponibilité affichée en",
+    uptime_percent: "Pourcentage",
   },
   de: {
     title: "Dienste",
@@ -274,6 +288,13 @@ const STRINGS = {
     track_down: "Offline-Zeit (Ausfälle)",
     track_up: "Online-Zeit (Dauer und Zeiträume)",
     show_periods: "Online-Zeiträume anzeigen",
+    period: "Verlaufszeitraum",
+    period_rolling: "Letzte Stunden (Verlaufsdauer)",
+    period_today: "Heute",
+    period_yesterday: "Gestern",
+    period_week: "Diese Woche",
+    uptime_display: "Verfügbarkeit anzeigen als",
+    uptime_percent: "Prozent",
   },
   es: {
     title: "Servicios",
@@ -348,6 +369,13 @@ const STRINGS = {
     track_down: "Tiempo caído (fallos)",
     track_up: "Tiempo activo (duración y franjas)",
     show_periods: "Mostrar las franjas activas",
+    period: "Periodo del historial",
+    period_rolling: "Últimas horas (duración del historial)",
+    period_today: "Hoy",
+    period_yesterday: "Ayer",
+    period_week: "Esta semana",
+    uptime_display: "Disponibilidad mostrada como",
+    uptime_percent: "Porcentaje",
   },
   it: {
     title: "Servizi",
@@ -422,6 +450,13 @@ const STRINGS = {
     track_down: "Tempo offline (guasti)",
     track_up: "Tempo online (durata e fasce)",
     show_periods: "Mostra le fasce online",
+    period: "Periodo dello storico",
+    period_rolling: "Ultime ore (durata dello storico)",
+    period_today: "Oggi",
+    period_yesterday: "Ieri",
+    period_week: "Questa settimana",
+    uptime_display: "Disponibilità mostrata come",
+    uptime_percent: "Percentuale",
   },
   nl: {
     title: "Diensten",
@@ -496,6 +531,13 @@ const STRINGS = {
     track_down: "Offline tijd (storingen)",
     track_up: "Online tijd (duur en periodes)",
     show_periods: "Online periodes tonen",
+    period: "Periode van de geschiedenis",
+    period_rolling: "Laatste uren (duur van de geschiedenis)",
+    period_today: "Vandaag",
+    period_yesterday: "Gisteren",
+    period_week: "Deze week",
+    uptime_display: "Beschikbaarheid tonen als",
+    uptime_percent: "Percentage",
   },
   pt: {
     title: "Serviços",
@@ -570,6 +612,13 @@ const STRINGS = {
     track_down: "Tempo em baixo (falhas)",
     track_up: "Tempo ativo (duração e períodos)",
     show_periods: "Mostrar os períodos ativos",
+    period: "Período do histórico",
+    period_rolling: "Últimas horas (duração do histórico)",
+    period_today: "Hoje",
+    period_yesterday: "Ontem",
+    period_week: "Esta semana",
+    uptime_display: "Disponibilidade mostrada como",
+    uptime_percent: "Percentagem",
   },
   pl: {
     title: "Usługi",
@@ -644,6 +693,13 @@ const STRINGS = {
     track_down: "Czas niedostępności (awarie)",
     track_up: "Czas dostępności (długość i okresy)",
     show_periods: "Pokaż okresy dostępności",
+    period: "Okres historii",
+    period_rolling: "Ostatnie godziny (długość historii)",
+    period_today: "Dzisiaj",
+    period_yesterday: "Wczoraj",
+    period_week: "Ten tydzień",
+    uptime_display: "Dostępność pokazywana jako",
+    uptime_percent: "Procent",
   },
   sr: {
     title: "Сервиси",
@@ -718,6 +774,13 @@ const STRINGS = {
     track_down: "Време када не ради (кварови)",
     track_up: "Време рада (трајање и периоди)",
     show_periods: "Прикажи периоде рада",
+    period: "Период историје",
+    period_rolling: "Последњи сати (трајање историје)",
+    period_today: "Данас",
+    period_yesterday: "Јуче",
+    period_week: "Ове недеље",
+    uptime_display: "Доступност приказана као",
+    uptime_percent: "Проценат",
   },
   "sr-Latn": {
     title: "Servisi",
@@ -792,6 +855,13 @@ const STRINGS = {
     track_down: "Vreme kada ne radi (kvarovi)",
     track_up: "Vreme rada (trajanje i periodi)",
     show_periods: "Prikaži periode rada",
+    period: "Period istorije",
+    period_rolling: "Poslednji sati (trajanje istorije)",
+    period_today: "Danas",
+    period_yesterday: "Juče",
+    period_week: "Ove nedelje",
+    uptime_display: "Dostupnost prikazana kao",
+    uptime_percent: "Procenat",
   },
   ro: {
     title: "Servicii",
@@ -866,6 +936,13 @@ const STRINGS = {
     track_down: "Timp căzut (pene)",
     track_up: "Timp activ (durată și intervale)",
     show_periods: "Afișează intervalele active",
+    period: "Perioada istoricului",
+    period_rolling: "Ultimele ore (durata istoricului)",
+    period_today: "Azi",
+    period_yesterday: "Ieri",
+    period_week: "Săptămâna aceasta",
+    uptime_display: "Disponibilitate afișată ca",
+    uptime_percent: "Procent",
   },
   da: {
     title: "Tjenester",
@@ -940,6 +1017,13 @@ const STRINGS = {
     track_down: "Nedetid (udfald)",
     track_up: "Oppetid (varighed og perioder)",
     show_periods: "Vis perioderne oppe",
+    period: "Historikkens periode",
+    period_rolling: "Seneste timer (historikkens længde)",
+    period_today: "I dag",
+    period_yesterday: "I går",
+    period_week: "Denne uge",
+    uptime_display: "Oppetid vist som",
+    uptime_percent: "Procent",
   },
   sv: {
     title: "Tjänster",
@@ -1014,6 +1098,13 @@ const STRINGS = {
     track_down: "Nertid (avbrott)",
     track_up: "Drifttid (längd och perioder)",
     show_periods: "Visa perioderna uppe",
+    period: "Historikens period",
+    period_rolling: "Senaste timmarna (historikens längd)",
+    period_today: "I dag",
+    period_yesterday: "I går",
+    period_week: "Den här veckan",
+    uptime_display: "Drifttid visas som",
+    uptime_percent: "Procent",
   },
   bg: {
     title: "Услуги",
@@ -1088,6 +1179,13 @@ const STRINGS = {
     track_down: "Време без работа (сривове)",
     track_up: "Време на работа (продължителност и периоди)",
     show_periods: "Покажи периодите на работа",
+    period: "Период на историята",
+    period_rolling: "Последни часове (продължителност на историята)",
+    period_today: "Днес",
+    period_yesterday: "Вчера",
+    period_week: "Тази седмица",
+    uptime_display: "Наличност, показана като",
+    uptime_percent: "Процент",
   },
   ru: {
     title: "Сервисы",
@@ -1162,6 +1260,13 @@ const STRINGS = {
     track_down: "Время простоя (сбои)",
     track_up: "Время работы (длительность и периоды)",
     show_periods: "Показывать периоды работы",
+    period: "Период истории",
+    period_rolling: "Последние часы (длительность истории)",
+    period_today: "Сегодня",
+    period_yesterday: "Вчера",
+    period_week: "Эта неделя",
+    uptime_display: "Доступность в виде",
+    uptime_percent: "Проценты",
   },
   uk: {
     title: "Сервіси",
@@ -1236,6 +1341,13 @@ const STRINGS = {
     track_down: "Час простою (збої)",
     track_up: "Час роботи (тривалість і періоди)",
     show_periods: "Показувати періоди роботи",
+    period: "Період історії",
+    period_rolling: "Останні години (тривалість історії)",
+    period_today: "Сьогодні",
+    period_yesterday: "Учора",
+    period_week: "Цей тиждень",
+    uptime_display: "Доступність у вигляді",
+    uptime_percent: "Відсотки",
   },
   hu: {
     title: "Szolgáltatások",
@@ -1310,6 +1422,13 @@ const STRINGS = {
     track_down: "Leállási idő (kiesések)",
     track_up: "Működési idő (időtartam és időszakok)",
     show_periods: "Működési időszakok megjelenítése",
+    period: "Előzmények időszaka",
+    period_rolling: "Utolsó órák (előzmények hossza)",
+    period_today: "Ma",
+    period_yesterday: "Tegnap",
+    period_week: "Ezen a héten",
+    uptime_display: "Rendelkezésre állás megjelenítése",
+    uptime_percent: "Százalék",
   },
   sk: {
     title: "Služby",
@@ -1384,6 +1503,13 @@ const STRINGS = {
     track_down: "Čas nedostupnosti (výpadky)",
     track_up: "Čas dostupnosti (trvanie a obdobia)",
     show_periods: "Zobraziť obdobia dostupnosti",
+    period: "Obdobie histórie",
+    period_rolling: "Posledné hodiny (dĺžka histórie)",
+    period_today: "Dnes",
+    period_yesterday: "Včera",
+    period_week: "Tento týždeň",
+    uptime_display: "Dostupnosť zobrazená ako",
+    uptime_percent: "Percento",
   },
   cs: {
     title: "Služby",
@@ -1458,6 +1584,13 @@ const STRINGS = {
     track_down: "Doba nedostupnosti (výpadky)",
     track_up: "Doba dostupnosti (trvání a období)",
     show_periods: "Zobrazit období dostupnosti",
+    period: "Období historie",
+    period_rolling: "Poslední hodiny (délka historie)",
+    period_today: "Dnes",
+    period_yesterday: "Včera",
+    period_week: "Tento týden",
+    uptime_display: "Dostupnost zobrazená jako",
+    uptime_percent: "Procento",
   },
   sl: {
     title: "Storitve",
@@ -1532,6 +1665,13 @@ const STRINGS = {
     track_down: "Čas nedelovanja (izpadi)",
     track_up: "Čas delovanja (trajanje in obdobja)",
     show_periods: "Pokaži obdobja delovanja",
+    period: "Obdobje zgodovine",
+    period_rolling: "Zadnje ure (dolžina zgodovine)",
+    period_today: "Danes",
+    period_yesterday: "Včeraj",
+    period_week: "Ta teden",
+    uptime_display: "Razpoložljivost prikazana kot",
+    uptime_percent: "Odstotek",
   },
   lv: {
     title: "Pakalpojumi",
@@ -1606,6 +1746,13 @@ const STRINGS = {
     track_down: "Dīkstāves laiks (traucējumi)",
     track_up: "Darbības laiks (ilgums un periodi)",
     show_periods: "Rādīt darbības periodus",
+    period: "Vēstures periods",
+    period_rolling: "Pēdējās stundas (vēstures ilgums)",
+    period_today: "Šodien",
+    period_yesterday: "Vakar",
+    period_week: "Šonedēļ",
+    uptime_display: "Pieejamība rādīta kā",
+    uptime_percent: "Procenti",
   },
   el: {
     title: "Υπηρεσίες",
@@ -1680,6 +1827,13 @@ const STRINGS = {
     track_down: "Χρόνος εκτός λειτουργίας (διακοπές)",
     track_up: "Χρόνος λειτουργίας (διάρκεια και περίοδοι)",
     show_periods: "Εμφάνιση περιόδων λειτουργίας",
+    period: "Περίοδος ιστορικού",
+    period_rolling: "Τελευταίες ώρες (διάρκεια ιστορικού)",
+    period_today: "Σήμερα",
+    period_yesterday: "Χθες",
+    period_week: "Αυτή την εβδομάδα",
+    uptime_display: "Διαθεσιμότητα ως",
+    uptime_percent: "Ποσοστό",
   },
 };
 
@@ -1730,11 +1884,16 @@ const fmtDuration = (ms, locale) => {
   return fmtUnit(Math.floor(h / 24), "day", locale);
 };
 
-// A longer duration in hours and minutes: "12 min", "3 h", "3 h 20 min" (rounded down to the minute).
+// A longer duration in hours and minutes: "12 min", "3 h", "3 h 20 min" (rounded down to the minute); in days and
+// hours from 48 hours: "6 d 23 h".
 const fmtDurationHM = (ms, locale) => {
   const min = Math.max(0, Math.floor(ms / 60000));
   const h = Math.floor(min / 60);
   const m = min % 60;
+  if (h >= 48) {
+    const d = Math.floor(h / 24);
+    return h % 24 ? `${fmtUnit(d, "day", locale)} ${fmtUnit(h % 24, "hour", locale)}` : fmtUnit(d, "day", locale);
+  }
   if (!h) return fmtUnit(m, "minute", locale);
   return m ? `${fmtUnit(h, "hour", locale)} ${fmtUnit(m, "minute", locale)}` : fmtUnit(h, "hour", locale);
 };
@@ -2173,6 +2332,43 @@ const upPeriods = (segs, end) => {
   return { periods: out.reverse(), total };
 };
 
+// The history window (`period`), in the browser's time: the last `hours` (rolling, the default), today, yesterday or
+// this week. The time is counted over [start, end) (end: now, or midnight for yesterday); the bar spans
+// [start, barEnd), so that today and this week fill up as they go on. live: the window ends now (the current status
+// closes it and a period up can still be open).
+const PERIODS = ["rolling", "today", "yesterday", "week"];
+const addDays = (ms, n) => {
+  const d = new Date(ms);
+  d.setDate(d.getDate() + n);
+  return d.getTime();
+};
+const historyWindow = (period, hours, now = Date.now(), firstDay = 1) => {
+  const midnight = new Date(now).setHours(0, 0, 0, 0);
+  if (period === "today") return { start: midnight, end: now, barEnd: addDays(midnight, 1), live: true };
+  if (period === "yesterday") return { start: addDays(midnight, -1), end: midnight, barEnd: midnight, live: false };
+  if (period === "week") {
+    const start = addDays(midnight, -((new Date(midnight).getDay() - (firstDay % 7) + 7) % 7));
+    return { start, end: now, barEnd: addDays(start, 7), live: true };
+  }
+  return { start: now - hours * 3600e3, end: now, barEnd: now, live: true };
+};
+
+// First day of the week of a locale (1 Monday … 7 Sunday), Monday when the browser cannot tell.
+const WEEK_START = {};
+const firstDayOfWeek = (locale) => {
+  if (!(locale in WEEK_START)) {
+    let day = 1;
+    try {
+      const l = new Intl.Locale(locale);
+      day = (l.getWeekInfo?.() ?? l.weekInfo)?.firstDay || 1;
+    } catch {
+      day = 1;
+    }
+    WEEK_START[locale] = day;
+  }
+  return WEEK_START[locale];
+};
+
 // ---------------------------------------------------------------------------
 // Styles
 // ---------------------------------------------------------------------------
@@ -2591,6 +2787,27 @@ class UptimeBase extends HTMLElement {
     return Number.isFinite(v) && this._config[key] !== "" && this._config[key] !== null ? v : DEFAULTS[key];
   }
 
+  // The history window: `period` (rolling over `hours`, today, yesterday or this week).
+  _period() {
+    return PERIODS.includes(this._config.period) ? this._config.period : "rolling";
+  }
+
+  _window(now = Date.now()) {
+    return historyWindow(this._period(), this._opt("hours"), now, firstDayOfWeek(this._locale()));
+  }
+
+  // "Last 24 hours", "Today", "Yesterday", "This week".
+  _windowLabel() {
+    const p = this._period();
+    return p === "rolling" ? this._t("history", { h: this._opt("hours") }) : this._t(`period_${p}`);
+  }
+
+  // The uptime of a service as its time up over the window rather than a percentage: always when it is tracked up,
+  // else with `uptime_display: duration`.
+  _asDuration(v) {
+    return v.track === "up" || this._config.uptime_display === "duration";
+  }
+
   // What a service's time is counted as: "down" (outages, the default) or "up" (time on, for a PC or a console):
   // its `track` in `entities`, else the card's.
   _track(svc) {
@@ -2716,13 +2933,17 @@ class UptimeBase extends HTMLElement {
     if (c.show_history === false && c.show_uptime === false && !periods) return;
     const ids = services.filter((s) => s.source !== "cert_expiry").map((s) => s.status);
     if (!ids.length) return;
-    const key = `${ids.join(",")}|${this._opt("hours")}`;
+    // A rolling window keeps its key as it slides; a calendar one (today, yesterday, this week) gets a new one when
+    // the day or the week turns.
+    const w = this._window();
+    const period = this._period();
+    const key = `${ids.join(",")}|${period}|${period === "rolling" ? this._opt("hours") : w.start}`;
     const fresh = this._history && this._history.key === key && Date.now() - this._history.at < HISTORY_TTL;
     if (fresh || this._historyLoading === key) return;
     this._historyLoading = key;
-    const start = new Date(Date.now() - this._opt("hours") * 3600e3).toISOString();
+    const range = { start_time: new Date(w.start).toISOString(), ...(w.live ? {} : { end_time: new Date(w.end).toISOString() }) };
     Promise.resolve(
-      h.callWS({ type: "history/history_during_period", start_time: start, entity_ids: ids, minimal_response: true, no_attributes: true, significant_changes_only: false }),
+      h.callWS({ type: "history/history_during_period", ...range, entity_ids: ids, minimal_response: true, no_attributes: true, significant_changes_only: false }),
     )
       .then((res) => {
         this._history = { key, at: Date.now(), data: Object.fromEntries(ids.map((id) => [id, toTimeline(res?.[id])])) };
@@ -2878,9 +3099,8 @@ class UptimeBase extends HTMLElement {
     // Tags: Uptime Kuma's, the HA labels of the entity and its device, the option's
     view.tags = this._tagsOf(svc);
     // History and uptime
-    const hours = this._opt("hours");
-    const end = Date.now();
-    const start = end - hours * 3600e3;
+    const w = this._window();
+    const { start, end } = w;
     let timeline = this._history?.data?.[svc.status];
     // The history is reloaded every few minutes: a change since then is added from the state, so that the current
     // status only covers the time since it began (not everything since the last change recorded in the history).
@@ -2888,13 +3108,20 @@ class UptimeBase extends HTMLElement {
     if (timeline && Number.isFinite(lc) && !(timeline.length && timeline[timeline.length - 1].t >= lc)) timeline = [...timeline, { t: lc, s: st.state }];
     if (timeline && svc.source !== "cert_expiry") {
       const dc = st?.attributes?.device_class;
-      const segs = segments(timeline, start, end, (raw) => off(statusFromState(svc.status, raw, dc)), view.status);
-      view.bar = buckets(segs, start, end);
+      // A window that ended (yesterday) is closed by the status it had then, not by the current one.
+      const segs = segments(timeline, start, end, (raw) => off(statusFromState(svc.status, raw, dc)), w.live ? view.status : undefined);
+      view.bar = buckets(segs, start, w.barEnd);
       view.share = uptimeShare(segs);
-      if (view.track === "up") Object.assign(view, upPeriods(segs, end));
+      const up = upPeriods(segs, w.live ? end : Number.POSITIVE_INFINITY);
+      view.total = up.total;
+      if (view.track === "up") view.periods = up.periods;
     }
+    // Uptime Kuma's own 1-day uptime, for the default window (the last 24 hours); its time up, without the history.
     const us = this._s(svc.uptime);
-    if (hours === 24 && num(us) !== null) view.share = num(us);
+    if (this._period() === "rolling" && this._opt("hours") === 24 && num(us) !== null) {
+      view.share = num(us);
+      if (!Number.isFinite(view.total)) view.total = (view.share / 100) * (end - start);
+    }
     return view;
   }
 
@@ -3114,16 +3341,18 @@ class UptimeCard extends UptimeBase {
     const meta = [];
     if (c.show_latency !== false && v.latency !== null && v.latency !== undefined)
       meta.push(`<span class="lat ${v.latencyCls}" title="${esc(this._t("latency"))}">${esc(fmtLatency(v.latency, locale))}</span>`);
-    if (c.show_uptime !== false && v.track === "up" && Number.isFinite(v.total)) {
-      // Tracked up: the time up over the window rather than a percentage.
-      meta.push(`<span class="pct dur" title="${esc(`${this._t("time_up")} · ${this._t("history", { h: this._opt("hours") })}`)}">${esc(fmtDurationHM(v.total, locale))}</span>`);
+    const shareCls = (p) => (p >= 99 ? "" : p >= 95 ? "warn" : "crit");
+    if (c.show_uptime !== false && this._asDuration(v) && Number.isFinite(v.total)) {
+      // The time up over the window rather than a percentage (tracked up, or `uptime_display: duration`); a service
+      // tracked down keeps the colour of its share.
+      const pc = v.track === "up" || v.share == null ? "" : shareCls(v.share);
+      meta.push(`<span class="pct dur ${pc}" title="${esc(`${this._t("time_up")} · ${this._windowLabel()}`)}">${esc(fmtDurationHM(v.total, locale))}</span>`);
     } else if (c.show_uptime !== false && v.share !== null && v.share !== undefined) {
-      const pc = v.share >= 99 ? "" : v.share >= 95 ? "warn" : "crit";
-      meta.push(`<span class="pct ${pc}" title="${esc(this._t("uptime"))}">${esc(fmtPct(v.share, locale))}</span>`);
+      meta.push(`<span class="pct ${shareCls(v.share)}" title="${esc(`${this._t("uptime")} · ${this._windowLabel()}`)}">${esc(fmtPct(v.share, locale))}</span>`);
     }
     const bar =
       c.show_history !== false && v.bar
-        ? `<div class="hbar" role="img" aria-label="${esc(`${this._t("history", { h: this._opt("hours") })}${v.share != null ? `: ${fmtPct(v.share, locale)}` : ""}`)}">${v.bar.map((b) => `<i class="${b === "none" ? "none" : STATUS_CLASS[b]}"></i>`).join("")}</div>`
+        ? `<div class="hbar" role="img" aria-label="${esc(`${this._windowLabel()}${v.share != null ? `: ${fmtPct(v.share, locale)}` : ""}`)}">${v.bar.map((b) => `<i class="${b === "none" ? "none" : STATUS_CLASS[b]}"></i>`).join("")}</div>`
         : "";
     const periods = c.show_periods !== false && v.track === "up" && v.periods?.length ? this._periods(v.periods) : "";
     const label = `${v.name}: ${statusTxt}`;
@@ -3210,7 +3439,14 @@ class UptimeCard extends UptimeBase {
     if (!shares.length) return "";
     const avg = shares.reduce((a, b) => a + b, 0) / shares.length;
     const pc = avg >= 99 ? "ok" : avg >= 95 ? "warn" : "crit";
-    const caption = `${this._t("uptime")} · ${this._t("history", { h: this._opt("hours") })}`;
+    // `uptime_display: duration`: the average time up of the services over the window.
+    const totals = all.filter((v) => Number.isFinite(v.share)).map((v) => v.total).filter(Number.isFinite);
+    if (this._config.uptime_display === "duration" && totals.length) {
+      const time = totals.reduce((a, b) => a + b, 0) / totals.length;
+      const cap = `${this._t("time_up")} · ${this._windowLabel()}`;
+      return `<div class="state uptime ${pc}"><span class="v">${esc(fmtDurationHM(time, this._locale()))}</span><span class="cap">${esc(cap)}</span></div>`;
+    }
+    const caption = `${this._t("uptime")} · ${this._windowLabel()}`;
     return `<div class="state uptime ${pc}"><span class="v">${esc(fmtPct(avg, this._locale()))}</span><span class="cap">${esc(caption)}</span></div>`;
   }
 
@@ -3433,13 +3669,21 @@ class UptimeEditorBase extends HTMLElement {
           { name: "group_by", selector: { select: { mode: "dropdown", options: ["tag", "source", "none"].map((v) => ({ value: v, label: tr(`group_${v}`) })) } } },
           { name: "sort", selector: { select: { mode: "dropdown", options: ["status", "name"].map((v) => ({ value: v, label: tr(`sort_${v}`) })) } } },
           { name: "track", selector: { select: { mode: "dropdown", options: ["down", "up"].map((v) => ({ value: v, label: tr(`track_${v}`) })) } } },
+          { name: "period", selector: { select: { mode: "dropdown", options: PERIODS.map((v) => ({ value: v, label: tr(`period_${v}`) })) } } },
+          {
+            name: "uptime_display",
+            selector: { select: { mode: "dropdown", options: [{ value: "percent", label: tr("uptime_percent") }, { value: "duration", label: tr("time_up") }] } },
+          },
         ],
       },
       { type: "grid", name: "", schema: this.constructor.toggles.map(([name]) => ({ name, selector: { boolean: {} } })) },
       {
         type: "grid",
         name: "",
-        schema: this.constructor.numbers.map((name) => ({
+        // The history length only counts for the rolling window.
+        schema: this.constructor.numbers
+          .filter((name) => name !== "hours" || !PERIODS.includes(this._config.period) || this._config.period === "rolling")
+          .map((name) => ({
           name,
           selector: { number: { min: nums[name][0], max: nums[name][1], mode: "box", ...(nums[name][2] ? { unit_of_measurement: nums[name][2] } : {}) } },
         })),
@@ -3476,7 +3720,7 @@ class UptimeEditorBase extends HTMLElement {
   }
 
   _defaults() {
-    return { ...Object.fromEntries(this.constructor.toggles), group_by: "tag", sort: "status", track: "down", illustration_theme: "auto", ...Object.fromEntries(this.constructor.numbers.map((n) => [n, DEFAULTS[n]])) };
+    return { ...Object.fromEntries(this.constructor.toggles), group_by: "tag", sort: "status", track: "down", period: "rolling", uptime_display: "percent", illustration_theme: "auto", ...Object.fromEntries(this.constructor.numbers.map((n) => [n, DEFAULTS[n]])) };
   }
 
   _render() {

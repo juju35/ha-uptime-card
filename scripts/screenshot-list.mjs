@@ -16,6 +16,8 @@ export const shots = [
   ...pair("card-by-source", "uptime-card", 460, { group_by: "source", show_hero: false }),
   ...pair("card-problems", "uptime-card", 460, { only_problems: true }),
   ...pair("card-folded", "uptime-card", 460, { collapsed: true }),
+  // The time up over the window instead of the percentage (`uptime_display: duration`).
+  ...pair("card-duration", "uptime-card", 460, { only_problems: true, uptime_display: "duration" }),
   // Narrow cards: the full card at its minimum width (9 of 12 columns of a 320 px Sections view, 238 px) and the
   // mini card at 6 columns of a phone's Sections view (170 px).
   ...pair("card-narrow", "uptime-card", 238, { only_problems: true }),
