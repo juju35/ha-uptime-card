@@ -83,7 +83,7 @@ test("the full card: header summary and chip, problems first, latency, certifica
   const bar = dns.slice(dns.indexOf('class="hbar"'), dns.indexOf("</div>", dns.indexOf('class="hbar"')));
   assert.equal((bar.match(/<i /g) || []).length, 48);
   assert.match(bar, /class="crit"/);
-  assert.match(dns, /<span class="pct warn" title="Uptime">97 %<\/span>/);
+  assert.match(dns, /<span class="pct warn" title="Uptime · Last 24 hours">97 %<\/span>/);
   // The hero's big line is the average uptime, not the status already in the pill.
   assert.match(h, /<div class="state uptime (ok|warn|crit)"><span class="v">\d+ %<\/span><span class="cap">Uptime · Last 24 hours<\/span><\/div>/);
   assert.doesNotMatch(h, /<div class="state crit">1 down<\/div>/);
@@ -423,7 +423,7 @@ test("a change after the history was loaded only colors the time since it began"
   const dns = h.slice(h.indexOf('data-entity="sensor.dns_status"'));
   const bar = dns.slice(dns.indexOf('class="hbar"'), dns.indexOf("</div>", dns.indexOf('class="hbar"')));
   assert.equal((bar.match(/class="crit"/g) || []).length, 3, "the old outage (2 slices) and the last slice only");
-  assert.match(dns, /title="Uptime">97 %/, "2 minutes out of 24 hours, not 17 hours");
+  assert.match(dns, /title="Uptime · Last 24 hours">97 %/, "2 minutes out of 24 hours, not 17 hours");
 });
 
 test("a certificate that fails validation reads invalid, not unknown", () => {

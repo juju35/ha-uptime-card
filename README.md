@@ -32,6 +32,7 @@ The cards work on top of the integrations you already use — [Uptime Kuma](http
 - Status of each service (**up**, **down**, **pending**, **maintenance**), with how long it has been down
 - **Response time** (Uptime Kuma, Ping), in orange above a threshold you choose
 - **Uptime bar** of the last 24 hours (48 slices of 30 minutes, each in the color of the worst status seen in it) and the **uptime percentage**, from the Home Assistant history (or Uptime Kuma's own 1-day uptime sensor when it is enabled)
+- **History period** of your choice: the last hours (`hours`, up to a week), **today**, **yesterday** or **this week**; the uptime shown as a **percentage** or as the **time up** over that period (`uptime_display: duration`, e.g. `23 hr 50 min`, `6 days 23 hr`)
 - **Time up instead of downtime** (`track: up`, for the whole card or per entity): for a PC, a console or any device whose time on matters more than its outages — `Off` in grey (not a problem), `Up for 1 hr 20 min`, the time up over the window instead of a percentage and the periods up (`7:10 PM – now`, `Thu 4:42 PM – 6:12 PM`) under the bar
 - **SSL certificate expiry** (Uptime Kuma, Certificate Expiry): days left on every row, the date in its tooltip, orange then red as the expiry gets close, red when expired or invalid; a Certificate Expiry certificate goes to the row of the service of the same host
 - **Groups by tag** (Uptime Kuma tags and Home Assistant labels), by integration, or none; collapsible groups, a group with a service down always unfolded
@@ -134,7 +135,9 @@ show_uptime: true
 show_ssl: true
 show_periods: true
 track: down                # down (outages) or up (time on)
+period: rolling            # rolling (last `hours`), today, yesterday or week
 hours: 24
+uptime_display: percent    # percent or duration (time up)
 ssl_warning_days: 14
 ssl_critical_days: 3
 latency_warning: 1000
@@ -195,7 +198,9 @@ entities:
 | `show_ssl` | both | `true` | Certificate expiry of each service, and its alerts |
 | `track` | both | `down` | What the time of a service is counted as: `down` (outages: `Down for 14 min`, uptime percentage) or `up` (time on, for a PC or a console: a service down reads `Off` in grey and is not a problem, `Up for 1 hr 20 min`, the time up over the window instead of the percentage, and its periods up). Can be set per entity in `entities` |
 | `show_periods` | both | `true` | With `track: up`: the periods up of each service over the window, the latest first (`7:10 PM – now`, the day when not today), the first 6 shown and the others counted as `+N`; all of them in the tooltip |
-| `hours` | both | `24` | Length of the history of the uptime bar and percentage, in hours |
+| `period` | both | `rolling` | History window of the uptime bar, percentage and time up: `rolling` (the last `hours`), `today` (since midnight, the bar spanning the whole day and filling up as it goes on), `yesterday` (midnight to midnight) or `week` (this week, from the first day of the week of your language, the bar spanning the whole week). The days follow the browser's time zone |
+| `hours` | both | `24` | With `period: rolling`: length of the history of the uptime bar and percentage, in hours (`168` for 7 days); the visual editor shows it only for that period |
+| `uptime_display` | both | `percent` | Uptime of each service, and of the overview, as a `percent`age or as the time up over the window (`duration`: `23 hr 50 min`, in days and hours from 48 hours, still in orange or red when the share is low). A service with `track: up` always shows its time up |
 | `ssl_warning_days` | both | `14` | Certificate in orange from this many days left |
 | `ssl_critical_days` | both | `3` | Certificate in red from this many days left (and once expired or invalid) |
 | `latency_warning` | both | `1000` | Response time in orange above this many milliseconds |
@@ -248,6 +253,12 @@ Groups folded (`collapsed: true`): the Media group, with a service down, stays u
 | <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/screenshots/card-folded.png" alt="folded groups" width="400"> | <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/screenshots/card-problems.png" alt="only problems" width="400"> |
 | <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/screenshots/card-folded-dark.png" alt="folded groups dark" width="400"> | <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/screenshots/card-problems-dark.png" alt="only problems dark" width="400"> |
 
+The uptime as the time up over the window rather than a percentage (`uptime_display: duration`, with `only_problems: true`):
+
+| Light | Dark |
+|---|---|
+| <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/screenshots/card-duration.png" alt="time up instead of the percentage" width="400"> | <img src="https://raw.githubusercontent.com/juju35/ha-uptime-card/main/screenshots/card-duration-dark.png" alt="time up instead of the percentage dark" width="400"> |
+
 Grouped by integration, without the overview (`group_by: source`, `show_hero: false`):
 
 | Light | Dark |
@@ -282,7 +293,7 @@ The full card at its minimum width (9 of 12 columns of a narrow Sections view, 2
 
 The cards read the Home Assistant entity and device registries instead of entity ids: an Uptime Kuma monitor is the device of a `status` sensor of the `uptime_kuma` platform, with its `response_time`, `cert_days_remaining`, `url`, `hostname`, `type`, `tags` and `uptime_1d` sensors; a Ping host is a `ping` binary sensor, with the `round_trip_time_avg` sensor of its device; a Healthchecks.io check is a `healthchecksio` binary sensor; a certificate is a `cert_expiry` sensor, whose host comes from its device. Entity ids can therefore be in any language or renamed without breaking the cards. Disabled entities are left out, and so is a service whose status entity is hidden (a hidden URL, response time or certificate sensor still adds to its monitor).
 
-The uptime bar asks the recorder for the history of the status entities (one request for all of them, again every 5 minutes) and splits the window into 48 equal slices, each drawn in the color of the worst status seen in it (grey without data). The uptime percentage is the time up over the time up or down: maintenance, pending and unknown periods are left out. With `track: up`, the same history gives the time up over the window and its periods up (back-to-back up changes make one period).
+The uptime bar asks the recorder for the history of the status entities over the window of `period` (one request for all of them, again every 5 minutes, and when the day or the week turns) and splits the window into 48 equal slices, each drawn in the color of the worst status seen in it (grey without data). The uptime percentage is the time up over the time up or down: maintenance, pending and unknown periods are left out. With `track: up`, the same history gives the time up over the window and its periods up (back-to-back up changes make one period).
 
 ## Development
 

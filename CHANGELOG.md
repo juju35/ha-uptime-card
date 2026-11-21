@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.3.0 - 2026-11-21
+
+### Features
+- **History period** (`period`, [#24](https://github.com/juju35/ha-uptime-card/issues/24)): besides the last `hours` (`rolling`, the default), the uptime bar, percentage and time up can cover `today` (since midnight, the bar spanning the whole day and filling up as it goes on), `yesterday` (midnight to midnight, closed by the status of that time) or `week` (this week, from the first day of the week of the language). The history is asked again when the day or the week turns; the tooltips, the bar's name and the overview caption name the period (`Uptime · Today`).
+- **Time up instead of the percentage** (`uptime_display: duration`, [#24](https://github.com/juju35/ha-uptime-card/issues/24)): each service, and the overview, show the time up over the window (`23 hr 50 min`), still in orange or red when the share is low.
+- Durations of 48 hours and more read in days and hours (`6 days 23 hr`), for `track: up` too.
+- `period` and `uptime_display` are in the visual editors (the history length only for the rolling window), their labels in the 22 languages.
+
+### Maintenance
+- Tests: windows, durations, the history asked for yesterday, today's bar and the editor; the screenshots test only fails on orphan captures, so that a new capture can be committed by the Screenshots bot; a `card-duration` screenshot.
+
 ## 1.2.1 - 2026-11-21
 
 ### Fixes
