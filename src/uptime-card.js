@@ -3810,7 +3810,7 @@ for (const card of [
   },
 ]) {
   if (!window.customCards.some((c) => c.type === card.type))
-    window.customCards.push({ ...card, preview: true, documentationURL: "https://github.com/juju35/ha-uptime-card" });
+    window.customCards.push({ ...card, preview: false, documentationURL: "https://github.com/juju35/ha-uptime-card" });
 }
 
 console.info(`%c UPTIME-CARD %c v${VERSION} `, `color: white; background: ${ACCENT[0]}; font-weight: 700;`, `color: ${ACCENT[0]}; background: white; font-weight: 700;`);
