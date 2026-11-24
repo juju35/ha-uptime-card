@@ -3,6 +3,7 @@ import assert from "node:assert/strict";
 import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import { load } from "./load.mjs";
+import { source } from "./source.mjs";
 
 const uc = load();
 const LANGS = ["en", "fr", "de", "es", "it", "nl", "pt", "pl", "sr", "sr-Latn", "ro", "da", "sv", "bg", "ru", "uk", "hu", "sk", "cs", "sl", "lv", "el"];
@@ -35,7 +36,7 @@ test("the language follows the option, then Home Assistant, by base language, el
 });
 
 test("the visual editor offers every language, and the build splits them all out", () => {
-  const src = readFileSync(new URL("../src/uptime-card.js", import.meta.url), "utf8");
+  const src = source;
   for (const l of LANGS) assert.match(src, new RegExp(`\\["${l}", "[^"]+"\\]`), l);
   const split = readFileSync(new URL("../scripts/i18n-split.mjs", import.meta.url), "utf8");
   for (const l of LANGS) assert.ok(split.includes(`"${l}"`), l);
