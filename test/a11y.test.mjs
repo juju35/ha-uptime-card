@@ -1,9 +1,9 @@
 // Keyboard access, names of the elements without text, readable state colors and reduced motion.
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
 import { test } from "node:test";
 import { devices, entities, states } from "../scripts/mock-states.mjs";
 import { load } from "./load.mjs";
+import { source } from "./source.mjs";
 
 const uc = load();
 const makeHass = () => ({ entities, devices, states, language: "en" });
@@ -61,7 +61,7 @@ test("Enter and Space on an element with the button role click it; other keys do
 });
 
 test("state colors are mixed with the text color for text; animations stop with reduced motion", () => {
-  const src = readFileSync(new URL("../src/uptime-card.js", import.meta.url), "utf8");
+  const src = source;
   assert.match(src, /\.chip \{[^}]*color: color-mix\(in srgb, var\(--c, var\(--uc-ok\)\) 50%, var\(--primary-text-color\)\)/);
   assert.match(src, /\.svc-sub \.stxt \{ color: color-mix\(in srgb, var\(--c\) 50%, var\(--primary-text-color\)\)/);
   const html = newCard().shadowRoot.innerHTML;

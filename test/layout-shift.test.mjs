@@ -7,11 +7,10 @@
 // it in place (no element removed, <ha-card>, the icons and the running animations kept), and neither the card's
 // height nor the scroll position moves.
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
 import { after, test } from "node:test";
 import { callWS, devices, entities, states } from "../scripts/mock-states.mjs";
+import { source } from "./source.mjs";
 
-const source = readFileSync(new URL("../src/uptime-card.js", import.meta.url), "utf8");
 const STAND_INS = `
 customElements.define("ha-card", class extends HTMLElement {
   connectedCallback() {
