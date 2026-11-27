@@ -5,7 +5,7 @@ import { ACCENT } from "./core.js";
 
 export const BASE_STYLE = `
   :host { --uc-accent: ${ACCENT[0]}; --uc-ok: var(--success-color, #43a047); --uc-warn: var(--warning-color, #ffa600);
-          --uc-crit: var(--error-color, #db4437); --uc-idle: var(--disabled-text-color, #9e9e9e); --uc-maint: var(--info-color, #039be5);
+          --uc-crit: var(--error-color, #db4437); --uc-idle: var(--secondary-text-color, #9e9e9e); --uc-maint: var(--info-color, #039be5);
           /* Text in a state or accent color is mixed with the text color so that it reads at 4.5:1 at least; dots,
              bars and icons keep the plain color. */
           --uc-accent-text: color-mix(in srgb, var(--uc-accent) 50%, var(--primary-text-color)); }
